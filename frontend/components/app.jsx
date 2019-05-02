@@ -1,5 +1,4 @@
 import React from "react";
-import GreetingContainer from "./greeting/greeting_container";
 import { AuthRoute } from "../util/route_util";
 import NavBar from "./navbar/nav_bar_container";
 import LoginFormContainer from "./session_form/login_form_container";

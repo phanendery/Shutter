@@ -1,22 +1,115 @@
 //for highlighted login,singup buttons
-a:visited {
+a:visited,
+a {
   text-decoration: none;
-  color: blue;
+  color: purple;
 }
+
 // for header when logged in
 .nav-header {
   color: black;
-  text-shadow: 3px 2px whitesmoke;
   font-family: "Grand Hotel", cursive;
   font-size: 64px;
 }
 
 .greeting-stuff {
   color: black;
-  text-shadow: 3px 2px whitesmoke;
   font-family: "Grand Hotel", cursive;
-  font-size: 24px;
+  font-size: 20px;
   position: absolute;
   top: 8px;
   right: 16px;
+}
+
+.current-user-name {
+  color: black;
+  font-family: "Josefin Slab", serif;
+  font-size: 35px;
+}
+
+.header-button {
+  color: black;
+  font-family: "Josefin Slab", serif;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+
+.navBar {
+  position: relative;
+}
+
+.header-group {
+  display: flex;
+}
+
+.sign-up-button {
+  color: black;
+  font-family: "Josefin Slab", serif;
+  height: 200px;
+  width: 100px;
+  padding: 5px 10px;
+  border: black solid 2px;
+  border-radius: 20px;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.login-button {
+  color: black;
+  font-family: "Josefin Slab", serif;
+  height: 200px;
+  width: 200px;
+  padding: 5px 10px;
+  border: black solid 2px;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+.login-button:hover {
+  background-color: black;
+  text-shadow: none;
+  color: white;
+}
+
+.sign-up-button:hover {
+  background-color: black;
+  text-shadow: none;
+  color: white;
+}
+
+.login-form-container {
+  position: relative;
+  top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-header {
+  color: black;
+  font-family: "Josefin Slab", serif;
+  font-size: 25px;
+}
+
+.session-submit {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: "Josefin Slab", serif;
+}
+
+.demo-login {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: "Josefin Slab", serif;
 }
