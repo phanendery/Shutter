@@ -30,10 +30,21 @@ a {
 .header-button {
   color: black;
   font-family: "Josefin Slab", serif;
-  font-size: 16px;
-  border-radius: 5px;
+  height: 30px;
+  width: 100px;
   padding: 5px 10px;
-  margin-right: 10px;
+  border: black solid 2px;
+  border-radius: 20px;
+  margin: 10px;
+  font-size: 20px;
+  position: relative;
+  top: -7px;
+}
+
+.header-button:hover {
+  background-color: black;
+  text-shadow: none;
+  color: white;
 }
 
 .navBar {
@@ -111,5 +122,9 @@ a {
   display: flex;
   justify-content: center;
   width: 100%;
+  font-family: "Josefin Slab", serif;
+}
+
+.login-errors {
   font-family: "Josefin Slab", serif;
 }
