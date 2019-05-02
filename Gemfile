@@ -43,9 +43,9 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
+end
   gem 'bcrypt'
   gem 'jquery-rails'
-end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
