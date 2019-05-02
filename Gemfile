@@ -44,6 +44,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'annotate'
 end
+
   gem 'bcrypt'
   gem 'jquery-rails'
 
