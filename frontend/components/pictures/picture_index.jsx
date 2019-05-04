@@ -1,5 +1,6 @@
 import React from "react";
 import PictureIndexItem from "./picture_index_item";
+import Form from "../Form/form";
 
 class PictureIndex extends React.Component {
   componentDidMount() {
@@ -9,8 +10,19 @@ class PictureIndex extends React.Component {
 
   render() {
     console.log(this.props);
+    const { deletePicture, postPicture } = this.props;
+    console.log(deletePicture, postPicture, pictures);
     let pictures = this.props.pictures.map(picture => {
-      return <PictureIndexItem key={`${picture.id}`} picture={picture} />;
+      return (
+        <div>
+          <Form postPicture={postPicture} />
+          <PictureIndexItem
+            deletePicture={deletePicture}
+            key={`${picture.id}`}
+            picture={picture}
+          />
+        </div>
+      );
     });
     return (
       <div>

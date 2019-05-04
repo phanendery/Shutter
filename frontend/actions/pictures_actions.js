@@ -5,7 +5,6 @@ export const RECEIVE_PICTURE = "RECEIVE_PICTURE";
 export const REMOVE_PICTURE = "REMOVE_PICTURE";
 
 export const receivePictures = pictures => {
-  conole.log(pictures);
   return {
     pictures: pictures,
     type: RECEIVE_ALL_PICTURES
@@ -22,7 +21,7 @@ export const removePicture = picture => ({
 
 export const fetchPictures = () => dispatch =>
   PictureAPIUtil.fetchPictures().then(pictures =>
-    dispatch(recievePictures(pictures))
+    dispatch(receivePictures(pictures))
   );
 
 export const fetchPicture = id => dispatch =>
