@@ -1,4 +1,8 @@
-json.array! @pictures do |picture|
-    json.extract! picture, :id, :pic_name, :user_id
-    json.photoUrl url_for(picture.photo)
+@pictures.each do |picture|
+    json.set! picture.id do
+        json.extract! picture, :id, :pic_name, :user_id
+    # json.photoUrl url_for(picture.photo)
+    end
+      
+
 end

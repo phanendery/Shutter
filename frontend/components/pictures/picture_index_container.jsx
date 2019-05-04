@@ -3,7 +3,7 @@ import PictureIndex from "./picture_index";
 import { fetchPictures, deletePicture } from "../../actions/pictures_actions";
 
 const mSTP = state => {
-  let pictures = Object.values(state.pictures);
+  let pictures = Object.values(state.entities.pictures);
   return {
     pictures: pictures
   };

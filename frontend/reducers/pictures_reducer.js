@@ -9,8 +9,10 @@ const PicturesReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState;
   switch (action.type) {
-    case RECEIVE_ALL_PICTURES:
+    case RECEIVE_ALL_PICTURES: {
+      console.log(action);
       return action.pictures;
+    }
     case RECEIVE_PICTURE:
       let newState = merge(
         {},

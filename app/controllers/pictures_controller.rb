@@ -1,6 +1,7 @@
-class PicturesController < ApplicationController
+class Api::PicturesController < ApplicationController
     def index
         @pictures = Picture.all
+        p @pictures;
         render :index
     end
 
