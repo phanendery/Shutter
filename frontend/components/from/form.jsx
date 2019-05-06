@@ -29,11 +29,13 @@ export default class Form extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
+    console.log(this.state);
     const { postPicture } = this.props;
     formData.append("post[title]", this.state.title);
     if (this.state.photoFile) {
       formData.append("post[photo]", this.state.photoFile);
     }
+    console.log(formData);
     postPicture(formData);
   }
 

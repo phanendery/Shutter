@@ -1,1 +1,15 @@
 import { connect } from "react-redux";
+import home from "./home";
+
+const mapStateToProps = state => {
+  return {};
+};
+
+const mapDispatchToProps = dispatch => {
+  return {};
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(home);
