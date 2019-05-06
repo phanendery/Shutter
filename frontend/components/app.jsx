@@ -12,10 +12,10 @@ const App = () => (
     <header />
     <NavBar />
     <Switch>
-      <Route path="/" component={HomeContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <Route path="/pictures" component={PictureIndexContainer} />
+      <Route path="/" component={HomeContainer} />
     </Switch>
   </div>
 );

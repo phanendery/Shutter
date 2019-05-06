@@ -1,8 +1,98 @@
 html body {
-  background-color: #00e6c6;
+  height: 100vh;
+  width: 100%;
+}
+
+.home-page {
+  padding-top: 100px;
+  background-color: rgb(25, 214, 192);
+}
+.navBar {
+  background-color: rgb(25, 214, 192);
+}
+.home-content {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(25, 214, 192);
+  background-image: url(https://web.500px.com/static/media/bg_wave_xl.77aeb8c0.svg);
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 100%;
 }
 
 .home-page-picture {
-  width: 50%;
+  max-width: 100%;
+  width: 600px;
   height: auto;
+  position: relative;
+  left: 35px;
+}
+
+.home-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding-left: 60px;
+  max-width: 550px;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slogan {
+  font-family: Helvetica Neue, HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
+    Nimbus Sans L, Liberation Sans, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  padding-bottom: 30px;
+}
+
+.under-slogan {
+  font-family: Helvetica Neue, HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
+    Nimbus Sans L, Liberation Sans, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.bottom-slogan {
+  padding-top: 30px;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, FreeSans, Arial,
+    sansserif !important;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.pic-text {
+  padding-top: 10px;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, FreeSans, Arial,
+    sansserif !important;
+  font-size: 17px;
+  padding-left: 35px;
+}
+
+.sign-up-button2 {
+  background-color: white;
+  padding: 15px 60px;
+  text-align: center;
+  font-size: 23px;
+  border-radius: 30px;
+  border: white solid 2px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 2px;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, FreeSans, Arial,
+    sansserif !important;
+  font-weight: bold;
+}
+
+.sign-up-button2:hover {
+  color: #1890ff;
+}
+
+.big-signup {
+  background-color: rgb(25, 214, 192);
+  display: flex;
+  padding-left: 20px;
 }
