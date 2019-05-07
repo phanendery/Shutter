@@ -11,16 +11,15 @@ a {
   font-family: "Poiret One", cursive;
   font-size: 64px;
   padding: 25px 50px 10px 50px;
-  width: 100px;
 }
 
 .greeting-stuff {
   color: black;
-  font-family: "Grand Hotel", cursive;
   font-size: 20px;
-  position: absolute;
-  top: 8px;
-  right: 16px;
+  // position: absolute;
+  // top: 8px;
+  // right: 16px;
+  flex-grow: 1;
 }
 
 .current-user-name {

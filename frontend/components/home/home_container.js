@@ -3,7 +3,10 @@ import home from "./home";
 import { signup } from "../../actions/session_actions";
 
 const mapStateToProps = state => {
-  return {};
+  let currentUser = state.session.id;
+  return {
+    currentUser
+  };
 };
 
 const mapDispatchToProps = dispatch => {

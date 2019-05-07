@@ -16,7 +16,14 @@ const Greeting = ({ currentUser, logout }) => {
   );
   const personalGreeting = () => (
     <hgroup className="header-group">
+      <Link className="discover-navbar" to="/pictures">
+        Discover
+      </Link>
+      <div className="spacer" />
       <Dropdown />
+      <Link to="/pictures/new">
+        <i className="fas fa-plus upload-button" />
+      </Link>
     </hgroup>
   );
 

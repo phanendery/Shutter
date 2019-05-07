@@ -46,7 +46,7 @@ class Form extends React.Component {
     return (
       <div>
         <form onSubmit={e => this.handleSubmit(e)}>
-          <label htmlFor="post-body">Body of Post</label>
+          <label htmlFor="post-body">Title: </label>
           <input
             type="text"
             id="post-body"
@@ -54,9 +54,9 @@ class Form extends React.Component {
             onChange={e => this.handleInput(e)}
           />
           <input type="file" onChange={e => this.handleFile(e)} />
-          <h3>Image preview </h3>
+          <h3>Photo Preview </h3>
           {preview}
-          <button>Make a new Post!</button>
+          <button>Upload Picture</button>
         </form>
       </div>
     );

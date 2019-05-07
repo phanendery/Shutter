@@ -1,0 +1,20 @@
+.discover-navbar {
+  font-family: Helvetica Neue, HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
+    Nimbus Sans L, Liberation Sans, Arial, sans-serif;
+  cursor: pointer;
+  color: rgb(34, 34, 34);
+  order: -1;
+}
+
+.discover-navbar:hover {
+  color: #1890ff;
+}
+
+.nav-header {
+  display: flex;
+  flex-grow: 1;
+}
+
+.spacer {
+  flex-grow: 1;
+}

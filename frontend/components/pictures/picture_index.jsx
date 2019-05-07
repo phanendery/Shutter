@@ -1,6 +1,6 @@
 import React from "react";
 import PictureIndexItem from "./picture_index_item";
-import Form from "../form/form";
+import { Link } from "react-router-dom";
 
 class PictureIndex extends React.Component {
   componentDidMount() {
@@ -14,12 +14,13 @@ class PictureIndex extends React.Component {
     let pictures = this.props.pictures.map(picture => {
       return (
         <div>
-          <Form postPicture={postPicture} currentUser={currentUser} />
-          <PictureIndexItem
-            deletePicture={deletePicture}
-            key={`${picture.id}`}
-            picture={picture}
-          />
+          <Link to={`/pictures/${picture.id}`}>
+            <PictureIndexItem
+              // deletePicture={deletePicture}
+              key={`${picture.id}`}
+              picture={picture}
+            />
+          </Link>
         </div>
       );
     });
