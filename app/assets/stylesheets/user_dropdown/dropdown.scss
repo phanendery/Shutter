@@ -1,47 +1,46 @@
 .dropdown {
   position: relative;
-  display: inline-block;
+  border-radius: 5px;
 }
 ul {
   list-style-type: none;
+  border-radius: 5px;
   margin: 0;
   padding: 0;
-  top: 45px;
+  top: 40px;
   right: 0px;
-  width: 200px;
+  width: 100px;
   background-color: white;
   font-weight: bold;
   position: absolute;
 
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  text-align: right;
 }
 li a {
   color: #000;
   text-decoration: none;
 }
 li {
-  padding: 8px 16px;
+  padding: 10px 10px;
   border-bottom: 1px solid #e5e5e5;
 }
 li:last-child {
   border-bottom: none;
 }
 li:hover {
-  background-color: #e5e5e5;
-  color: white;
+  background-color: grey;
+  border-radius: 5px;
 }
 .button {
-  width: 178px;
-  height: 18px;
-  background-color: blue;
-  padding: 12px;
+  background-color: rgb(25, 214, 192);
+  padding: 10px;
   border-radius: 5px;
   font-weight: bold;
   color: white;
 }
 .button:before {
-  content: "";
   position: absolute;
   width: 0px;
   height: 0px;
@@ -51,6 +50,14 @@ li:hover {
   top: 18px;
 }
 
+.logout-dropdown {
+  font-family: Helvetica Neue, HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
+    Nimbus Sans L, Liberation Sans, Arial, sans-serif;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
 .profile-icon {
-  size: 30px;
+  font-size: 40px;
 }

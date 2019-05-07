@@ -29,15 +29,13 @@ class Dropdown extends React.Component {
       <div className="dropdown">
         <div className="button" onClick={this.showDropdownMenu}>
           {" "}
-          <div className="profile-icon">
-            <i className="fas fa-user-circle" />{" "}
-          </div>
+          <i className="fas fa-user-circle profile-icon" />{" "}
         </div>
 
         {this.state.displayMenu ? (
           <ul>
             <li>
-              <button className="log-out" onClick={this.props.logout}>
+              <button className="logout-dropdown" onClick={this.props.logout}>
                 Log Out
               </button>
             </li>
