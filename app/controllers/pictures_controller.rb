@@ -15,7 +15,16 @@ class Api::PicturesController < ApplicationController
     end
 
     def show
+        
         @picture = Picture.find(params[:id])
+    end
+
+    def destroy
+
+        @picture = Picture.find(params[:id])
+        @picture.destroy
+
+        render :index
     end
 
     private

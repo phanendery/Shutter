@@ -5,6 +5,7 @@ import LoginFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
 import PictureIndexContainer from "./pictures/picture_index_container";
 import HomeContainer from "./home/home_container";
+import PictureShowContainer from "./pictures/picture_show/picture_show_container";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 const App = () => (
@@ -14,8 +15,13 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-      <Route path="/pictures" component={PictureIndexContainer} />
-      <Route path="/" component={HomeContainer} />
+      <Route
+        exact
+        path="/pictures/:pictureId"
+        component={PictureShowContainer}
+      />
+      <Route exact path="/pictures" component={PictureIndexContainer} />
+      <Route exact path="/" component={HomeContainer} />
     </Switch>
   </div>
 );
