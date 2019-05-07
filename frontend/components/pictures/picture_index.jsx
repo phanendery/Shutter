@@ -15,20 +15,12 @@ class PictureIndex extends React.Component {
       return (
         <div>
           <Link to={`/pictures/${picture.id}`}>
-            <PictureIndexItem
-              // deletePicture={deletePicture}
-              key={`${picture.id}`}
-              picture={picture}
-            />
+            <PictureIndexItem key={`${picture.id}`} picture={picture} />
           </Link>
         </div>
       );
     });
-    return (
-      <div className="picture-index">
-        <ul>{pictures}</ul>
-      </div>
-    );
+    return <ul className="picture-index-layout">{pictures}</ul>;
   }
 }
 

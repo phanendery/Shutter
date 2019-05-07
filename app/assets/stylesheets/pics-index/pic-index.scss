@@ -2,3 +2,18 @@
   display: flex;
   justify-content: center;
 }
+
+.picture-index-layout {
+  display: flex;
+  padding: 50px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  img {
+    height: 500px;
+    margin: 5px;
+    transition: all 2s;
+  }
+  img:hover {
+    transform: scale(1.1);
+  }
+}
