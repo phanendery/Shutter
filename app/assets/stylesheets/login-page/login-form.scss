@@ -1,0 +1,56 @@
+.email-tag {
+  color: #71767a;
+  font-family: Helvetica Neue, HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
+    Nimbus Sans L, Liberation Sans, Arial, sans-serif;
+  font-size: 15px;
+}
+
+.password-tag {
+  color: #71767a;
+  font-family: Helvetica Neue, HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
+    Nimbus Sans L, Liberation Sans, Arial, sans-serif;
+  font-size: 15px;
+}
+
+.session-submit {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: Helvetica Neue, HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
+    Nimbus Sans L, Liberation Sans, Arial, sans-serif;
+  padding: 7px 15px;
+  border-radius: 5px;
+  background-color: #34bf49;
+  border-color: #34bf49;
+  color: white;
+}
+
+.demo-login {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: Helvetica Neue, HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
+    Nimbus Sans L, Liberation Sans, Arial, sans-serif;
+  padding: 7px 15px;
+  border-radius: 5px;
+  background-color: #3b5998;
+  color: white;
+}
+
+.login-text {
+  font-family: Helvetica Neue, HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
+    Nimbus Sans L, Liberation Sans, Arial, sans-serif;
+  font-size: 30px;
+  color: black;
+}
+
+.login-input1:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+.login-input2:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}

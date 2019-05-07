@@ -6,10 +6,12 @@ a {
 }
 
 // for header when logged in
-.nav-header {
+.logo {
   color: black;
-  font-family: "Grand Hotel", cursive;
+  font-family: "Poiret One", cursive;
   font-size: 64px;
+  padding: 25px 50px 10px 50px;
+  width: 100px;
 }
 
 .greeting-stuff {
@@ -23,13 +25,15 @@ a {
 
 .current-user-name {
   color: black;
-  font-family: "Josefin Slab", serif;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, FreeSans, Arial,
+    sansserif !important;
   font-size: 35px;
 }
 
-.header-button {
+.log-out {
   color: black;
-  font-family: "Josefin Slab", serif;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, FreeSans, Arial,
+    sansserif !important;
   height: 30px;
   width: 100px;
   padding: 5px 10px;
@@ -62,11 +66,13 @@ a {
   font-weight: bold;
   height: 200px;
   width: 100px;
-  padding: 5px 10px;
+  padding: 5px 15px;
   border: black solid 2px;
   border-radius: 20px;
   margin: 10px;
-  font-size: 20px;
+  font-size: 16px;
+  position: relative;
+  top: 30px;
 }
 
 .login-button {
@@ -76,22 +82,14 @@ a {
   font-weight: bold;
   height: 200px;
   width: 200px;
-  padding: 5px 10px;
-  border: black solid 2px;
-  border-radius: 20px;
-  font-size: 20px;
-}
-
-.login-button:hover {
-  background-color: black;
-  text-shadow: none;
-  color: white;
+  font-size: 16px;
+  position: relative;
+  top: 30px;
 }
 
 .sign-up-button:hover {
-  background-color: black;
-  text-shadow: none;
-  color: white;
+  color: brown;
+  border-color: brown;
 }
 
 .login-form-container {
@@ -100,6 +98,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .login-form {
@@ -114,20 +113,6 @@ a {
   font-family: Helvetica Neue, HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
     Nimbus Sans L, Liberation Sans, Arial, sans-serif;
   font-size: 25px;
-}
-
-.session-submit {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  font-family: "Josefin Slab", serif;
-}
-
-.demo-login {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  font-family: "Josefin Slab", serif;
 }
 
 .login-errors {

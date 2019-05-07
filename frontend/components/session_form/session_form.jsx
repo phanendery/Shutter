@@ -55,30 +55,36 @@ class SessionForm extends React.Component {
     }
     return (
       <div className="login-form-container">
+        <div className="login-text">
+          {this.props.formType === "Log In"
+            ? "Log In to Shutter"
+            : "Sign Up for Shutter"}
+        </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br />
           {this.renderErrors()}
           <div className="login-form">
             <br />
             <label className="login-header">
-              Username
+              <div className="email-tag">Email</div>
               <br />
               <input
                 type="text"
                 value={this.state.username}
                 onChange={this.update("username")}
-                className="login-input"
+                className="login-input1"
               />
             </label>
             <br />
             <label className="login-header">
-              Password
+              <div className="password-tag">Password</div>
+
               <br />
               <input
                 type="password"
                 value={this.state.password}
                 onChange={this.update("password")}
-                className="login-input"
+                className="login-input2"
               />
             </label>
             <br />

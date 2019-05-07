@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Dropdown from "./user_dropdown_container";
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
       <Link to="/login" className="login-button">
-        Login
+        Log in
       </Link>
       &nbsp; &nbsp;
       <Link to="/signup" className="sign-up-button">
@@ -15,13 +16,14 @@ const Greeting = ({ currentUser, logout }) => {
   );
   const personalGreeting = () => (
     <hgroup className="header-group">
-      <button className="header-button" onClick={logout}>
+      <Dropdown />
+      {/* <button className="log-out" onClick={logout}>
         Log Out
-      </button>
+      </button> */}
 
-      <div className="current-user-name">
+      {/* <div className="current-user-name">
         <h2 className="header-name">{currentUser.username}</h2>
-      </div>
+      </div> */}
     </hgroup>
   );
 
