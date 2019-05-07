@@ -51,10 +51,6 @@ a {
   color: white;
 }
 
-.navBar {
-  position: relative;
-}
-
 .header-group {
   display: flex;
 }
@@ -116,5 +112,9 @@ a {
 }
 
 .login-errors {
-  font-family: "Josefin Slab", serif;
+  font-family: Helvetica Neue, HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
+    Nimbus Sans L, Liberation Sans, Arial, sans-serif;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
 }

@@ -17,13 +17,6 @@ const Greeting = ({ currentUser, logout }) => {
   const personalGreeting = () => (
     <hgroup className="header-group">
       <Dropdown />
-      {/* <button className="log-out" onClick={logout}>
-        Log Out
-      </button> */}
-
-      {/* <div className="current-user-name">
-        <h2 className="header-name">{currentUser.username}</h2>
-      </div> */}
     </hgroup>
   );
 

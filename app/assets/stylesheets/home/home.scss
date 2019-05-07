@@ -9,6 +9,8 @@ html body {
 }
 .navBar {
   background-color: rgb(25, 214, 192);
+  position: relative;
+  display: flex;
 }
 .home-content {
   display: flex;

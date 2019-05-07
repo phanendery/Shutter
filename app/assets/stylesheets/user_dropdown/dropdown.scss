@@ -1,13 +1,14 @@
 .dropdown {
   position: relative;
   border-radius: 5px;
+  margin-top: 10px;
 }
-ul {
+.dropdown ul {
   list-style-type: none;
   border-radius: 5px;
   margin: 0;
   padding: 0;
-  top: 40px;
+  top: 60px;
   right: 0px;
   width: 100px;
   background-color: white;
@@ -16,7 +17,7 @@ ul {
 
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  text-align: right;
+  text-align: center;
 }
 li a {
   color: #000;

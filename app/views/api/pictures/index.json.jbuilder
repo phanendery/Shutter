@@ -4,5 +4,4 @@
         json.photoUrl url_for(picture.photo)
     end
       
-
 end

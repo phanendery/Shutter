@@ -1,6 +1,7 @@
 import React from "react";
+import { format } from "util";
 
-export default class Form extends React.Component {
+class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +12,6 @@ export default class Form extends React.Component {
   }
 
   handleInput(e) {
-    console.log(e);
     this.setState({ title: e.currentTarget.value });
   }
 
@@ -29,13 +29,14 @@ export default class Form extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    console.log(this.state);
+
     const { postPicture } = this.props;
-    formData.append("post[title]", this.state.title);
+    formData.append("picture[pic_name]", this.state.title);
     if (this.state.photoFile) {
-      formData.append("post[photo]", this.state.photoFile);
+      formData.append("picture[photo]", this.state.photoFile);
     }
-    console.log(formData);
+    formData.append("picture[user_id]", this.props.currentUser);
+    console.log("formdata:", formData);
     postPicture(formData);
   }
 
@@ -44,19 +45,23 @@ export default class Form extends React.Component {
       <img src={this.state.photoUrl} />
     ) : null;
     return (
-      <form onSubmit={e => this.handleSubmit(e)}>
-        <label htmlFor="post-body">Body of Post</label>
-        <input
-          type="text"
-          id="post-body"
-          value={this.state.title}
-          onChange={e => this.handleInput(e)}
-        />
-        <input type="file" onChange={e => this.handleFile(e)} />
-        <h3>Image preview </h3>
-        {preview}
-        <button>Make a new Post!</button>
-      </form>
+      <div>
+        <form onSubmit={e => this.handleSubmit(e)}>
+          <label htmlFor="post-body">Body of Post</label>
+          <input
+            type="text"
+            id="post-body"
+            value={this.state.title}
+            onChange={e => this.handleInput(e)}
+          />
+          <input type="file" onChange={e => this.handleFile(e)} />
+          <h3>Image preview </h3>
+          {preview}
+          <button>Make a new Post!</button>
+        </form>
+      </div>
     );
   }
 }
+
+export default Form;

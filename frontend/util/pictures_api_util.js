@@ -8,7 +8,9 @@ export const postPicture = picture =>
   $.ajax({
     method: "post",
     url: "/api/pictures",
-    data: { picture }
+    data: picture,
+    contentType: false,
+    processData: false
   });
 
 export const fetchPicture = id =>

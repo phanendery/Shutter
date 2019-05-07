@@ -5,9 +5,22 @@ class Api::PicturesController < ApplicationController
         render :index
     end
 
+    def create
+        @picture = Picture.new(picture_params)
+        if @picture.save!
+            render :show
+        else
+            render json: @picture.errors.full_messages, status: 422
+        end
+    end
+
+    def show
+        @picture = Picture.find(params[:id])
+    end
+
     private
 
     def picture_params
-        params.require(:picture).permit(:pic_name, :user_id);
+        params.require(:picture).permit(:pic_name, :user_id, :photo)
     end
 end

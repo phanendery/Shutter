@@ -29,10 +29,11 @@ export const fetchPicture = id => dispatch =>
     dispatch(receivePicture(picture))
   );
 
-export const postPicture = picture => dispatch =>
-  PictureAPIUtil.postPicture(picture).then(picture =>
+export const postPicture = picture => dispatch => {
+  return PictureAPIUtil.postPicture(picture).then(picture =>
     dispatch(receivePicture(picture))
   );
+};
 
 export const deletePicture = id => dispatch =>
   PictureAPIUtil.deletePicture(id).then(picture =>

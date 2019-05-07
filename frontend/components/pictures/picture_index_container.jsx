@@ -8,8 +8,10 @@ import {
 
 const mSTP = state => {
   let pictures = Object.values(state.entities.pictures);
+  let currentUser = state.session.id;
   return {
-    pictures: pictures
+    pictures: pictures,
+    currentUser
   };
 };
 
