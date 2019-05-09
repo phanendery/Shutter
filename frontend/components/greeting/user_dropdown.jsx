@@ -35,9 +35,11 @@ class Dropdown extends React.Component {
         {this.state.displayMenu ? (
           <ul>
             <li>
-              <button className="logout-dropdown" onClick={this.props.logout}>
-                Log Out
-              </button>
+              <Link to="/">
+                <button className="logout-dropdown" onClick={this.props.logout}>
+                  Log Out
+                </button>
+              </Link>
             </li>
           </ul>
         ) : null}

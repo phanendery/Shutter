@@ -9,8 +9,6 @@ class PictureIndex extends React.Component {
   }
 
   render() {
-    const { deletePicture, postPicture, currentUser } = this.props;
-
     let pictures = this.props.pictures.map(picture => {
       return (
         <div>

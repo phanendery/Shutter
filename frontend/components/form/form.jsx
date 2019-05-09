@@ -6,7 +6,8 @@ class Form extends React.Component {
     this.state = {
       title: "",
       photoFile: null,
-      photoUrl: null
+      photoUrl: null,
+      show: false
     };
   }
 
@@ -56,6 +57,7 @@ class Form extends React.Component {
           <input type="file" onChange={e => this.handleFile(e)} />
           <h3>Photo Preview </h3>
           {preview}
+
           <button>Upload Picture</button>
         </form>
       </div>

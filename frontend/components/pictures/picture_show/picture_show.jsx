@@ -25,15 +25,18 @@ class PictureShow extends React.Component {
     let photoUrl = photo.photoUrl;
     let currentUser = this.props.currentUser;
     let deletePhoto = (
-      <span
-        onClick={() => {
-          this.props
-            .deletePicture(photo.id)
-            .then(() => this.props.history.push("/pictures"));
-        }}
-      >
-        <i className="fas fa-times" />
-      </span>
+      <Link to="/pictures">
+        <button
+          className="delete-button"
+          onClick={() => {
+            this.props
+              .deletePicture(photo.id)
+              .then(() => this.props.history.push("/pictures"));
+          }}
+        >
+          <i className="fas fa-times" />
+        </button>
+      </Link>
     );
 
     console.log(this.props);
@@ -43,7 +46,7 @@ class PictureShow extends React.Component {
     }
     return (
       <div>
-        <Link to="/pictures">Discover</Link>
+        {/* <h1>{pic_name}</h1> */}
         <img src={photoUrl} alt={pic_name} className="single-photo" />
         {deletePhoto}
       </div>

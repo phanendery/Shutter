@@ -8,9 +8,11 @@ html body {
   background-color: rgb(25, 214, 192);
 }
 .navBar {
-  background-color: rgb(25, 214, 192);
+  // background-color: rgb(25, 214, 192);
+  background-color: white;
   position: relative;
   display: flex;
+  border-bottom: 1px solid;
 }
 .home-content {
   display: flex;

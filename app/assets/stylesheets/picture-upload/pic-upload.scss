@@ -5,4 +5,36 @@
   right: 5px;
   color: lightgrey;
   order: 2;
+  padding-right: 10px;
+}
+
+.logo:hover {
+  color: #1890ff;
+}
+.modal-design {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: 10px 20px 40px;
+  z-index: 999;
+  background-color: #eee;
+  padding: 10px 20px 40px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-design {
+  margin-bottom: 15px;
+  padding: 3px 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  align-self: flex-end;
 }

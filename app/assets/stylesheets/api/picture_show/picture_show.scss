@@ -1,0 +1,13 @@
+.single-photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 100px;
+  padding-top: 20px;
+}
+
+.delete-button {
+  display: flex;
+  flex: 50%;
+  text-align: right;
+}

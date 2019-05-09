@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === "Log In") {
       demologin = (
         <button className="demo-login" onClick={this.handleDemoSubmit}>
-          Demo Log In
+          Guest Login
         </button>
       );
     }
