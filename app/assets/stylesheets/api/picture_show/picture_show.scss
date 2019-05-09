@@ -11,3 +11,13 @@
   flex: 50%;
   text-align: right;
 }
+
+.picture-name {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  color: grey;
+  font-size: 30px;
+}

@@ -21,7 +21,7 @@ class PictureShow extends React.Component {
     if (photo === undefined) {
       return null;
     }
-    let pic_name = photo.title;
+    let pic_name = photo.pic_name;
     let photoUrl = photo.photoUrl;
     let currentUser = this.props.currentUser;
     let deletePhoto = (
@@ -39,14 +39,13 @@ class PictureShow extends React.Component {
       </Link>
     );
 
-    console.log(this.props);
-
     if (this.props.picture.user_id !== currentUser.id) {
       deletePhoto = null;
     }
+
     return (
       <div>
-        {/* <h1>{pic_name}</h1> */}
+        <h1 className="picture-name">{pic_name}</h1>
         <img src={photoUrl} alt={pic_name} className="single-photo" />
         {deletePhoto}
       </div>
