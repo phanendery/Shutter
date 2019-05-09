@@ -1,13 +1,3 @@
-.upload-button {
-  font-size: 40px;
-  position: relative;
-  top: 20px;
-  right: 5px;
-  color: lightgrey;
-  order: 2;
-  padding-right: 10px;
-}
-
 .logo:hover {
   color: #1890ff;
 }
@@ -20,7 +10,7 @@
   top: 50%;
   transform: 10px 20px 40px;
   z-index: 999;
-  background-color: #eee;
+  background-color: white;
   padding: 10px 20px 40px;
   border-radius: 8px;
   display: flex;
@@ -37,4 +27,118 @@
   height: 30px;
   font-weight: bold;
   align-self: flex-end;
+}
+
+.upload-page {
+  display: flex;
+  flex-grow: 1;
+}
+
+.upload-image {
+  font-size: 200px;
+  padding-top: 200px;
+}
+
+.upload-button {
+  border: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.upload-button:hover {
+  color: #1890ff;
+}
+
+.upload-form {
+  font: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
+    "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+}
+
+.upload-modal-button {
+  font: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
+    "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  padding: 7px 15px;
+  border-radius: 5px;
+  background-color: #34bf49;
+  border-color: #34bf49;
+  color: white;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+#image-form {
+  display: flex;
+}
+
+#close-button {
+  display: flex;
+  margin-left: 80%;
+  margin-bottom: 1%;
+  padding: 7px 15px;
+  border-radius: 5px;
+  background-color: red;
+  border-color: red;
+  color: white;
+}
+
+#post-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  margin-top: 4%;
+}
+
+#phanny-image {
+  width: 70vh;
+  margin-left: 1%;
+  margin-top: 1%;
+  height: 70vh;
+}
+
+#phanny-image img {
+  margin-left: 1%;
+  margin-top: 1%;
+  height: 70%;
+  width: auto;
+}
+
+#phanny-pack {
+  margin-left: 40%;
+  margin-top: 1%;
+}
+
+#title-font {
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  font-size: 20px;
+  margin-bottom: 5%;
+  width: 150px;
+  color: grey;
+}
+
+#file-upload-input {
+  visibility: hidden;
+}
+
+.upload-button-file {
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  margin-top: 5%;
+  border: 10px;
+  margin-left: 8%;
+  padding: 7px 15px;
+  border-radius: 5px;
+  background-color: #34bf49;
+  border-color: #34bf49;
+  color: white;
+  width: 120px;
+}
+
+.upload-button-plus {
+  color: grey;
+  margin-top: 20px;
+  margin-right: 15px;
+  font-size: 35px;
 }

@@ -26,7 +26,7 @@ class Home extends React.Component {
             </div>
             <div className="big-signup">
               <Link to="/signup" className="sign-up-button2">
-                Sign up
+                Experience Now
               </Link>
             </div>
           </div>

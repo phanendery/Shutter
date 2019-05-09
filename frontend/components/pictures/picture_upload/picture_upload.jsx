@@ -22,8 +22,10 @@ class PictureUpload extends React.Component {
   render() {
     const { postPicture, currentUser } = this.props;
     return (
-      <div>
-        <button onClick={this.showModal}>Upload</button>
+      <div className="upload-page">
+        <button className="upload-button" onClick={this.showModal}>
+          <i className="fas fa-images upload-image" />
+        </button>
         <Modal handleClose={this.hideModal} show={this.state.showModal}>
           <div>
             <Form postPicture={postPicture} currentUser={currentUser} />

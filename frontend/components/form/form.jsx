@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 class Form extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class Form extends React.Component {
       photoUrl: null,
       show: false
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInput(e) {
@@ -37,7 +39,7 @@ class Form extends React.Component {
     }
     formData.append("picture[user_id]", this.props.currentUser);
     console.log("formdata:", formData);
-    postPicture(formData);
+    postPicture(formData).then(() => this.props.history.push("/pictures"));
   }
 
   render() {
@@ -45,24 +47,34 @@ class Form extends React.Component {
       <img src={this.state.photoUrl} />
     ) : null;
     return (
-      <div>
-        <form onSubmit={e => this.handleSubmit(e)}>
-          <label htmlFor="post-body">Title: </label>
-          <input
-            type="text"
-            id="post-body"
-            value={this.state.title}
-            onChange={e => this.handleInput(e)}
-          />
-          <input type="file" onChange={e => this.handleFile(e)} />
-          <h3>Photo Preview </h3>
-          {preview}
+      <div className="upload-form">
+        <form id="image-form" onSubmit={e => this.handleSubmit(e)}>
+          <div id="phanny-image">{preview}</div>
+          <div id="phanny-pack">
+            <label htmlFor="post-body" id="title-font">
+              Title:{" "}
+            </label>
+            <input
+              type="text"
+              id="post-body"
+              value={this.state.title}
+              onChange={e => this.handleInput(e)}
+            />
+            <label htmlFor="file-upload-input">
+              <h2 className="upload-button-file">Choose a Photo</h2>
+              <input
+                id="file-upload-input"
+                type="file"
+                onChange={e => this.handleFile(e)}
+              />
+            </label>
 
-          <button>Upload Picture</button>
+            <button className="upload-modal-button">Upload Picture</button>
+          </div>
         </form>
       </div>
     );
   }
 }
 
-export default Form;
+export default withRouter(Form);

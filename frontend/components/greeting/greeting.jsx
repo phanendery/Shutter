@@ -22,7 +22,7 @@ const Greeting = ({ currentUser, logout }) => {
       <div className="spacer" />
       <Dropdown />
       <Link to="/pictures/new">
-        <i className="fas fa-plus upload-button" />
+        <i className="fas fa-plus upload-button-plus" />
       </Link>
     </hgroup>
   );
