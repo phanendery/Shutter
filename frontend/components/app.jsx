@@ -14,8 +14,8 @@ const App = () => (
     <header />
     <NavBar />
     <Switch>
-      <AuthRoute path="/login" component={LoginFormContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <Route exact path="/pictures/new" component={PictureUploadContainer} />
       <Route
         exact
@@ -23,8 +23,8 @@ const App = () => (
         component={PictureShowContainer}
       />
       <Route exact path="/pictures" component={PictureIndexContainer} />
-
       <Route exact path="/" component={HomeContainer} />
+      <Redirect to="/" />
     </Switch>
   </div>
 );
