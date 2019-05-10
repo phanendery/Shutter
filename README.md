@@ -1,24 +1,25 @@
-# README
+# Shutter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Shutter, a 500px clone, is a photography platform for all levels of photographers to share their art.
 
-Things you may want to cover:
+## Technologies
 
-* Ruby version
+* Backend: Rails/ActiveRecord/PostgreSQL
+* Frontend: React/Redux
 
-* System dependencies
+## Features
 
-* Configuration
+* Secured frontend to backend user authentication via BCrypt
+* Users can upload their photos to share on the website
+* Users can add a title and remove their photo if wanted
 
-* Database creation
+## Planned Features
 
-* Database initialization
+* Users can like and un-like photos
+* Users can edit their pictures
+* Pictures will have tags and can be searched by their tags
+* Pictures and Users both can be searched via the Search Bar
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
