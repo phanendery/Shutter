@@ -44,10 +44,12 @@ class PictureShow extends React.Component {
     }
 
     return (
-      <div>
-        <h1 className="picture-name">{pic_name}</h1>
+      <div className="showpageDiv">
         <img src={photoUrl} alt={pic_name} className="single-photo" />
         {deletePhoto}
+        <div className="pictureInfo">
+          <h1 className="picture-name">{pic_name}</h1>
+        </div>
       </div>
     );
   }

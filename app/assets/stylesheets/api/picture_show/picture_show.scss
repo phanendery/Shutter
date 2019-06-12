@@ -8,6 +8,10 @@
   max-height: 70%;
 }
 
+.showpageDiv {
+  background-color: rgb(34, 34, 34);
+}
+
 .delete-button {
   display: flex;
   flex: 50%;
@@ -17,9 +21,13 @@
 .picture-name {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  // margin-top: 20px;
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
   color: grey;
   font-size: 30px;
+}
+
+.pictureInfo {
+  background-color: white;
 }
