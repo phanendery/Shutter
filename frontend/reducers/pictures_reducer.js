@@ -10,7 +10,7 @@ const PicturesReducer = (oldState = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_ALL_PICTURES: {
-      console.log(action);
+      // console.log(action);
       return action.pictures;
     }
     case RECEIVE_PICTURE:

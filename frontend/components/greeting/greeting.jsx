@@ -4,15 +4,17 @@ import Dropdown from "./user_dropdown_container";
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
-    <nav className="login-signup">
-      <Link to="/login" className="login-button">
-        Log in
-      </Link>
-      &nbsp; &nbsp;
-      <Link to="/signup" className="sign-up-button">
-        Sign up
-      </Link>
-    </nav>
+    <div className="button-holder">
+      <nav className="login-signup">
+        <Link to="/login" className="login-button">
+          Log in
+        </Link>
+        &nbsp; &nbsp;
+        <Link to="/signup" className="sign-up-button">
+          Sign up
+        </Link>
+      </nav>
+    </div>
   );
   const personalGreeting = () => (
     <hgroup className="header-group">
