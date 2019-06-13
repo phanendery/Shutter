@@ -20,14 +20,37 @@
 
 .picture-name {
   display: flex;
-  justify-content: center;
-  // margin-top: 20px;
+  justify-content: left;
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
-  color: grey;
-  font-size: 30px;
+  color: black;
+  font-size: 40px;
+  margin-left: 100px;
+  margin-top: 50px;
 }
 
 .pictureInfo {
+  margin-top: 20px;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.cameraIcon {
+  font-size: 30px;
+  margin-left: 100px;
+  margin-top: 15px;
+}
+
+.infoIcon {
+  font-size: 30px;
+  margin-left: 100px;
+  margin-top: 15px;
+  margin-bottom: 100px;
+}
+
+.lensIcon {
+  font-size: 30px;
+  margin-left: 100px;
+  margin-top: 15px;
 }

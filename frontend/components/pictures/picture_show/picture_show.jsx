@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 class PictureShow extends React.Component {
   constructor(props) {
     super(props);
@@ -46,9 +47,12 @@ class PictureShow extends React.Component {
     return (
       <div className="showpageDiv">
         <img src={photoUrl} alt={pic_name} className="single-photo" />
-        {deletePhoto}
+        {/* {deletePhoto} */}
         <div className="pictureInfo">
-          <h1 className="picture-name">{pic_name}</h1>
+          <p className="picture-name">{pic_name}</p>
+          <i class="fas fa-camera-retro cameraIcon" />
+          <i class="fas fa-video lensIcon"></i>
+          <i class="fas fa-stream infoIcon" ></i>
         </div>
       </div>
     );
