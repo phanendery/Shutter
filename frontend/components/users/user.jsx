@@ -11,7 +11,7 @@ class User extends React.Component {
     console.log(this.props);
     return (
       <div>
-        <li>Test</li>
+        <li>Test Display Pics</li>
       </div>
     );
   }
