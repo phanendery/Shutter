@@ -8,13 +8,21 @@ class Form extends React.Component {
       title: "",
       photoFile: null,
       photoUrl: null,
+      description: "",
+      camera: "",
+      lens: "",
+      focal: "",
       show: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleInput(e) {
-    this.setState({ title: e.currentTarget.value });
+  handleInput(field) {
+    return e => {
+      this.setState({
+        [field]: e.currentTarget.value
+      });
+    };
   }
 
   handleFile(e) {
@@ -34,6 +42,10 @@ class Form extends React.Component {
 
     const { postPicture } = this.props;
     formData.append("picture[pic_name]", this.state.title);
+    formData.append("picture[description]", this.state.description);
+    formData.append("picture[camera]", this.state.camera);
+    formData.append("picture[lens]", this.state.lens);
+    formData.append("picture[focal]", this.state.focal);
     if (this.state.photoFile) {
       formData.append("picture[photo]", this.state.photoFile);
     }
@@ -54,12 +66,7 @@ class Form extends React.Component {
             <label htmlFor="post-body" id="title-font">
               Title:{" "}
             </label>
-            <input
-              type="text"
-              id="post-body"
-              value={this.state.title}
-              onChange={e => this.handleInput(e)}
-            />
+
             <label htmlFor="file-upload-input">
               <h2 className="upload-button-file">Choose a Photo</h2>
               <input
@@ -68,6 +75,40 @@ class Form extends React.Component {
                 onChange={e => this.handleFile(e)}
               />
             </label>
+            <input
+              type="text"
+              id="post-body"
+              value={this.state.title}
+              onChange={e => this.handleInput("title")}
+            />
+
+            <input
+              type="text"
+              id="post-body"
+              value={this.state.description}
+              onChange={e => this.handleInput("description")}
+            />
+
+            <input
+              type="text"
+              id="post-body"
+              value={this.state.camera}
+              onChange={e => this.handleInput("camera")}
+            />
+
+            <input
+              type="text"
+              id="post-body"
+              value={this.state.lens}
+              onChange={e => this.handleInput("lens")}
+            />
+
+            <input
+              type="text"
+              id="post-body"
+              value={this.state.focal}
+              onChange={e => this.handleInput("focal")}
+            />
 
             <button className="upload-modal-button">Upload Picture</button>
           </div>
