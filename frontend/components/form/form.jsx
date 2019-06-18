@@ -63,10 +63,6 @@ class Form extends React.Component {
         <form id="image-form" onSubmit={e => this.handleSubmit(e)}>
           <div id="phanny-image">{preview}</div>
           <div id="phanny-pack">
-            <label htmlFor="post-body" id="title-font">
-              Title:{" "}
-            </label>
-
             <label htmlFor="file-upload-input">
               <h2 className="upload-button-file">Choose a Photo</h2>
               <input
@@ -75,39 +71,51 @@ class Form extends React.Component {
                 onChange={e => this.handleFile(e)}
               />
             </label>
+
+            <label htmlFor="post-body" id="title-font">
+              Title:{" "}
+            </label>
             <input
               type="text"
-              id="post-body"
+              className="post-body"
               value={this.state.title}
-              onChange={e => this.handleInput("title")}
+              onChange={this.handleInput("title")}
             />
-
+            <label htmlFor="post-body" id="title-font">
+              Description:{" "}
+            </label>
             <input
               type="text"
-              id="post-body"
+              className="post-body"
               value={this.state.description}
-              onChange={e => this.handleInput("description")}
+              onChange={this.handleInput("description")}
             />
-
+            <label htmlFor="post-body" id="title-font">
+              Camera:{" "}
+            </label>
             <input
               type="text"
-              id="post-body"
+              className="post-body"
               value={this.state.camera}
-              onChange={e => this.handleInput("camera")}
+              onChange={this.handleInput("camera")}
             />
-
+            <label htmlFor="post-body" id="title-font">
+              Lens:{" "}
+            </label>
             <input
               type="text"
-              id="post-body"
+              className="post-body"
               value={this.state.lens}
-              onChange={e => this.handleInput("lens")}
+              onChange={this.handleInput("lens")}
             />
-
+            <label htmlFor="post-body" id="title-font">
+              Focal Length:{" "}
+            </label>
             <input
               type="text"
-              id="post-body"
+              className="post-body"
               value={this.state.focal}
-              onChange={e => this.handleInput("focal")}
+              onChange={this.handleInput("focal")}
             />
 
             <button className="upload-modal-button">Upload Picture</button>
