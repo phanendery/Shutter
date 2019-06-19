@@ -81,6 +81,7 @@ class Form extends React.Component {
               value={this.state.title}
               onChange={this.handleInput("title")}
             />
+            <br />
             <label htmlFor="post-body" id="title-font">
               Description:{" "}
             </label>
@@ -90,8 +91,9 @@ class Form extends React.Component {
               value={this.state.description}
               onChange={this.handleInput("description")}
             />
+            <br />
             <label htmlFor="post-body" id="title-font">
-              Camera:{" "}
+              Camera (Optional):{" "}
             </label>
             <input
               type="text"
@@ -99,8 +101,9 @@ class Form extends React.Component {
               value={this.state.camera}
               onChange={this.handleInput("camera")}
             />
+            <br />
             <label htmlFor="post-body" id="title-font">
-              Lens:{" "}
+              Lens (Optional):{" "}
             </label>
             <input
               type="text"
@@ -108,8 +111,9 @@ class Form extends React.Component {
               value={this.state.lens}
               onChange={this.handleInput("lens")}
             />
+            <br />
             <label htmlFor="post-body" id="title-font">
-              Focal Length:{" "}
+              Focal Length (Optional):{" "}
             </label>
             <input
               type="text"
