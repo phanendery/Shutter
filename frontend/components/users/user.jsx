@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PictureIndexItem from "../pictures/picture_index_item";
 
 class User extends React.Component {
   componentDidMount() {
@@ -8,13 +9,10 @@ class User extends React.Component {
   }
 
   render() {
-  
     if (this.props.pictures.length === 0) return <></>;
-   
 
     let matchPics = [];
     for (let i = 0; i < this.props.pictures.length; i++) {
-
       if (this.props.match.params.userId == this.props.pictures[i].user_id) {
         matchPics.push(this.props.pictures[i]);
       }
@@ -22,7 +20,11 @@ class User extends React.Component {
     console.log(matchPics);
     return (
       <div>
-        <li>Test Display Pics</li>
+        {matchPics.map(picture => (
+          <Link to={`/pictures/${picture.id}`}>
+            <PictureIndexItem key={`${picture.id}`} picture={picture} />
+          </Link>
+        ))}
       </div>
     );
   }
