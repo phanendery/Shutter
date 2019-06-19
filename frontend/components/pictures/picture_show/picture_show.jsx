@@ -53,13 +53,13 @@ class PictureShow extends React.Component {
         {/* {deletePhoto} */}
         <div className="pictureInfo">
           <p className="picture-name">{pic_name}</p>
-          <p className="picture-info">{description}</p>
+          <p className="picture-info1">{description}</p>
           <i class="fas fa-camera-retro cameraIcon" />
-          <p className="picture-info">{camera}</p>
+          <p className="picture-info2">{camera}</p>
           <i class="fas fa-video lensIcon" />
-          <p className="picture-info">{lens}</p>
+          <p className="picture-info3">{lens}</p>
           <i class="fas fa-stream infoIcon" />
-          <p className="picture-info">{focal}</p>
+          <p className="picture-info4">{focal}</p>
         </div>
       </div>
     );

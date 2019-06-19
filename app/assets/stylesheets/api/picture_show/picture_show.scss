@@ -24,14 +24,46 @@
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
   color: black;
-  font-size: 40px;
+  font-size: 50px;
   margin-left: 100px;
   margin-top: 50px;
 }
 
-.picture-info {
+.picture-info1 {
   display: flex;
   justify-content: left;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  color: black;
+  font-size: 30px;
+  margin-left: 100px;
+  margin-top: 40px;
+}
+
+.picture-info2 {
+  position: relative;
+  left: 100px;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  color: black;
+  font-size: 20px;
+  margin-left: 100px;
+  bottom: 27px;
+}
+
+.picture-info3 {
+  position: relative;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  color: black;
+  font-size: 20px;
+  margin-left: 100px;
+  left: 100px;
+  bottom: 27px;
+}
+
+.picture-info4 {
+  position: relative;
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
   color: black;
@@ -50,14 +82,14 @@
 .cameraIcon {
   font-size: 30px;
   margin-left: 100px;
-  margin-top: 15px;
+  margin-top: 40px;
 }
 
 .infoIcon {
   font-size: 30px;
   margin-left: 100px;
   margin-top: 15px;
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
 }
 
 .lensIcon {
