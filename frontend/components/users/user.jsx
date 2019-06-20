@@ -4,7 +4,6 @@ import PictureIndexItem from "../pictures/picture_index_item";
 
 class User extends React.Component {
   componentDidMount() {
-    // console.log(this.props.fetchPictures());
     this.props.fetchPictures();
   }
 

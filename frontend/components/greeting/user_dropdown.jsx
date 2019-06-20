@@ -25,6 +25,7 @@ class Dropdown extends React.Component {
   }
 
   render() {
+    console.log(this.props.currentUser.id);
     return (
       <div className="dropdown">
         <div className="button" onClick={this.showDropdownMenu}>
@@ -34,6 +35,11 @@ class Dropdown extends React.Component {
 
         {this.state.displayMenu ? (
           <ul>
+            <li>
+              <Link to={`/users/${this.props.currentUser.id}`}>
+                <button className="logout-dropdown">Profile</button>
+              </Link>
+            </li>
             <li>
               <Link to="/">
                 <button className="logout-dropdown" onClick={this.props.logout}>
