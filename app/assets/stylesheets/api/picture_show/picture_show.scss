@@ -13,7 +13,16 @@
 }
 
 .delete-button {
-  display: flex;
+  font: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
+    "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  padding: 7px 15px;
+  border-radius: 5px;
+  background-color: red;
+  border-color: red;
+  color: white;
+  position: relative;
+  left: 750px;
+  top: 200px;
   flex: 50%;
   text-align: right;
 }

@@ -38,7 +38,7 @@ class PictureShow extends React.Component {
               .then(() => this.props.history.push("/pictures"));
           }}
         >
-          <i className="fas fa-times" />
+          Delete Picture?
         </button>
       </Link>
     );
@@ -50,7 +50,7 @@ class PictureShow extends React.Component {
     return (
       <div className="showpageDiv">
         <img src={photoUrl} alt={pic_name} className="single-photo" />
-        {/* {deletePhoto} */}
+        {deletePhoto}
         <div className="pictureInfo">
           <p className="picture-name">{pic_name}</p>
           <p className="picture-info1">{description}</p>
