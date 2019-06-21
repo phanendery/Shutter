@@ -16,7 +16,7 @@ class User extends React.Component {
         matchPics.push(this.props.pictures[i]);
       }
     }
-    console.log(matchPics);
+
     return (
       <div>
         {matchPics.map(picture => (
