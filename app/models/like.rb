@@ -1,5 +1,5 @@
 class Like < ApplicationRecord
-    validates :user_id, uniqueness: {scope: picture_id} #this is so use can like picture more than once if unliked
+    validates :user_id, uniqueness: {scope: :picture_id} #this is so use can like picture more than once if unliked
 
     belongs_to :user,
     class_name: :User,
