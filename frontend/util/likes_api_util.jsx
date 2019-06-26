@@ -8,14 +8,13 @@ export const fetchLikes = () => {
 export const createLike = id => {
   return $.ajax({
     method: "POST",
-    url: "api/likes",
-    data: { post_id: id }
+    url: `api/pictures/${id}/likes`
   });
 };
 
 export const deleteLike = id => {
   return $.ajax({
     method: "DELETE",
-    url: `api/likes/${id}`
+    url: `api/pictures/${id}/likes`
   });
 };

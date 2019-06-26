@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LikeButtonContainer from "../../likes/like_button_container";
 
 class PictureShow extends React.Component {
   constructor(props) {
@@ -54,11 +55,16 @@ class PictureShow extends React.Component {
         <div className="pictureInfo">
           <p className="picture-name">{pic_name}</p>
           <p className="picture-info1">{description}</p>
-          <i class="fas fa-camera-retro cameraIcon" />
+          <LikeButtonContainer
+            liked={this.props.picture.liked}
+            picture_id={this.props.picture.id}
+            numLikes={this.props.picture.numLikes}
+          />
+          <i className="fas fa-camera-retro cameraIcon" />
           <p className="picture-info2">{camera}</p>
-          <i class="fas fa-video lensIcon" />
+          <i className="fas fa-video lensIcon" />
           <p className="picture-info3">{lens}</p>
-          <i class="fas fa-stream infoIcon" />
+          <i className="fas fa-stream infoIcon" />
           <p className="picture-info4">{focal}</p>
         </div>
       </div>

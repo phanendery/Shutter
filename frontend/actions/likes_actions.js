@@ -1,4 +1,5 @@
 import * as APIUtil from "../util/likes_api_util";
+import { receivePicture } from "../actions/pictures_actions";
 
 export const RECEIVE_LIKE = "RECEIVE_LIKE";
 export const RECEIVE_ALL_LIKES = "RECEIVE_ALL_LIKES";
@@ -11,28 +12,18 @@ const receiveAllLikes = likes => {
   };
 };
 
-const receiveLike = like => {
-  return {
-    type: RECEIVE_LIKE,
-    like: like
-  };
-};
-
-const removeLike = like => {
-  return {
-    type: REMOVE_LIKE,
-    likeId: like.id
-  };
-};
-
 export const fetchLikes = () => dispatch => {
   return APIUtil.fetchLikes().then(likes => dispatch(receiveAllLikes(likes)));
 };
 
 export const createLike = id => dispatch => {
-  return APIUtil.createLike(id).then(like => dispatch(receiveLike(like)));
+  return APIUtil.createLike(id).then(like =>
+    dispatch(receivePicture(like.picture))
+  );
 };
 
 export const deleteLike = id => dispatch => {
-  return APIUtil.deleteLike(id).then(like => dispatch(removeLike(like)));
+  return APIUtil.deleteLike(id).then(like =>
+    dispatch(receivePicture(like.picture))
+  );
 };

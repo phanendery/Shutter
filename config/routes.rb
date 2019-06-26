@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resource :user, only: [:create]
     resource :session, only: [:create, :destroy, :show]
-    resources :pictures, only: [:index,:create,:show,:destroy]
-    resources :likes, only: [:create,:show,:index, :update, :destroy]
-  end
+    resources :pictures, only: [:index,:create,:show,:destroy] do
+        resources :likes, only: [:create]
+        delete "likes", to: "likes#destroy"
+    end
 
+  end
 end

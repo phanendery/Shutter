@@ -1,9 +1,8 @@
 .single-photo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 100px;
-  padding-top: 20px;
+  position: relative;
+  // justify-content: center;
+  padding-left: 150px;
+  padding-top: 40px;
   max-width: 70%;
   max-height: 70%;
 }
@@ -106,4 +105,8 @@
   font-size: 30px;
   margin-left: 100px;
   margin-top: 15px;
+}
+
+.like-button {
+  position: relative;
 }
