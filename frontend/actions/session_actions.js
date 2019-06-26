@@ -38,3 +38,6 @@ export const login = user => dispatch =>
 
 export const logout = () => dispatch =>
   APIUtil.logout().then(user => dispatch(logoutCurrentUser()));
+
+export const uploadAvatar = avatar => dispatch =>
+  APIUtil.uploadAvatar(avatar).then(user => dispatch(receiveCurrentUser(user)));

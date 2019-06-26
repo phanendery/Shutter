@@ -9,10 +9,12 @@ class User < ApplicationRecord
 
   has_many :pictures
   has_many :likes
+  has_one_attached :avatar
   
 
+
   def self.find_by_credentials(username, password)
-    user = User.find_by(username: username)
+    user = User.with_attached_avatar.find_by(username: username)
     return nil unless user
     user.is_password?(password) ? user : nil
   end

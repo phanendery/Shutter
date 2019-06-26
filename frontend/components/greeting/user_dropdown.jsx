@@ -30,7 +30,11 @@ class Dropdown extends React.Component {
       <div className="dropdown">
         <div className="button" onClick={this.showDropdownMenu}>
           {" "}
-          <i className="fas fa-user-circle profile-icon" />{" "}
+          {this.props.currentUser.avatar ? (
+            <img src={this.props.currentUser.avatar} />
+          ) : (
+            <i className="fas fa-user-circle profile-icon" />
+          )}{" "}
         </div>
 
         {this.state.displayMenu ? (
@@ -45,6 +49,11 @@ class Dropdown extends React.Component {
                 <button className="logout-dropdown" onClick={this.props.logout}>
                   Log Out
                 </button>
+              </Link>
+            </li>
+            <li>
+              <Link to="/avatar">
+                <button className="logout-dropdown">Change Avatar</button>
               </Link>
             </li>
           </ul>

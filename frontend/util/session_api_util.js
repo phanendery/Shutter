@@ -17,3 +17,12 @@ export const logout = () =>
     method: "DELETE",
     url: "/api/session"
   });
+
+export const uploadAvatar = avatar =>
+  $.ajax({
+    method: "patch",
+    url: "/api/user",
+    data: avatar,
+    contentType: false,
+    processData: false
+  });

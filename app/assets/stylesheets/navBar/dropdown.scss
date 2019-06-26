@@ -40,6 +40,13 @@ li:hover {
   border-radius: 5px;
   font-weight: bold;
   color: grey;
+
+  img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
 }
 .button:before {
   position: absolute;
