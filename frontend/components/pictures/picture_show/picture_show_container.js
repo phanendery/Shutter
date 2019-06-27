@@ -1,7 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchPicture, deletePicture } from "../../../actions/pictures_actions";
+import { createComment } from "../../../actions/comment_actions";
 import PictureShow from "../picture_show/picture_show";
+import { create } from "domain";
 
 const mSTP = (state, ownProps) => {
   let pictureId = ownProps.match.params.pictureId;
@@ -13,10 +15,12 @@ const mSTP = (state, ownProps) => {
   };
 };
 
-const mDTP = dispatch => {
+const mDTP = (dispatch, ownProps) => {
   return {
     fetchPicture: id => dispatch(fetchPicture(id)),
-    deletePicture: id => dispatch(deletePicture(id))
+    deletePicture: id => dispatch(deletePicture(id)),
+    createComment: text =>
+      dispatch(createComment(ownProps.match.params.pictureId, text))
   };
 };
 

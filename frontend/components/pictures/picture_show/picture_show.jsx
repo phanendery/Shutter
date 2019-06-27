@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LikeButtonContainer from "../../likes/like_button_container";
+import CommentContainer from "../../comments/comment_container";
 
 class PictureShow extends React.Component {
   constructor(props) {
@@ -8,13 +9,27 @@ class PictureShow extends React.Component {
     this.state = {
       title: "",
       photoFile: null,
-      photoUrl: null
+      photoUrl: null,
+      text: ""
     };
+    this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     let pictureId = this.props.match.params.pictureId;
     this.props.fetchPicture(pictureId);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createComment(this.state.text);
+    this.setState({ text: "" });
+  }
+
+  handleInput(e) {
+    e.preventDefault();
+    this.setState({ text: e.target.value });
   }
 
   render() {
@@ -66,6 +81,20 @@ class PictureShow extends React.Component {
           <p className="picture-info3">{lens}</p>
           <i className="fas fa-stream infoIcon" />
           <p className="picture-info4">{focal}</p>
+        </div>
+        <div className="comments">
+          <ul>
+            {this.props.picture.comments &&
+              Object.values(this.props.picture.comments).map(comment => (
+                <li key={comment.id}>
+                  <CommentContainer comment={comment} />
+                </li>
+              ))}
+          </ul>
+          <form action="" onSubmit={this.handleSubmit}>
+            <textarea value={this.state.text} onChange={this.handleInput} />
+            <button>Add Comment</button>
+          </form>
         </div>
       </div>
     );

@@ -11,6 +11,21 @@
   background-color: rgb(34, 34, 34);
 }
 
+.comment {
+  img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.comments {
+  background: white;
+  li:hover {
+    background: white;
+  }
+}
 .delete-button {
   font: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
     "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;

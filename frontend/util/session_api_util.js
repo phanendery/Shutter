@@ -26,3 +26,9 @@ export const uploadAvatar = avatar =>
     contentType: false,
     processData: false
   });
+
+export const fetchUser = id =>
+  $.ajax({
+    method: "GET",
+    url: `/api/users/${id}`
+  });
