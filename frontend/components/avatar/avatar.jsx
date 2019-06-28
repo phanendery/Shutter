@@ -34,7 +34,7 @@ export default class Avatar extends React.Component {
       <div>
         <form action="" onSubmit={this.handleSubmit}>
           <input type="file" onChange={this.handleFile} />
-          <button>Upload!</button>
+          <button className="avatar-upload-button">Upload!</button>
         </form>
       </div>
     );
