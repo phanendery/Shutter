@@ -8,12 +8,15 @@
   flex: 25%;
   max-width: 25%;
   padding: 0 4px;
+  box-sizing: border-box;
 }
 
 .column img {
   margin-top: 8px;
   vertical-align: middle;
   width: 100%;
+  // height: 200px;
+  // object-fit: cover;
 }
 
 .column img {

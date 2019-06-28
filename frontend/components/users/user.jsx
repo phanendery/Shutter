@@ -16,11 +16,11 @@ class User extends React.Component {
         matchPics.push(this.props.pictures[i]);
       }
     }
-    console.log("test");
+
     return (
-      <div>
+      <div className="row">
         {matchPics.map(picture => (
-          <Link to={`/pictures/${picture.id}`}>
+          <Link to={`/pictures/${picture.id}`} className="column">
             <PictureIndexItem key={`${picture.id}`} picture={picture} />
           </Link>
         ))}

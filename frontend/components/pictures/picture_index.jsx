@@ -11,7 +11,7 @@ class PictureIndex extends React.Component {
   render() {
     let pictures = this.props.pictures.map(picture => {
       return (
-        <div id="photos">
+        <div className="column">
           <Link to={`/pictures/${picture.id}`}>
             <PictureIndexItem key={`${picture.id}`} picture={picture} />
           </Link>
@@ -21,7 +21,7 @@ class PictureIndex extends React.Component {
     return (
       <div className="row">
         {/* className="picture-index-layout" */}
-        <ul className="column">{pictures}</ul>
+        {pictures}
       </div>
     );
   }
