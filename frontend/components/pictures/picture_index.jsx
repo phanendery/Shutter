@@ -18,7 +18,12 @@ class PictureIndex extends React.Component {
         </div>
       );
     });
-    return <ul className="picture-index-layout">{pictures}</ul>;
+    return (
+      <div className="row">
+        {/* className="picture-index-layout" */}
+        <ul className="column">{pictures}</ul>
+      </div>
+    );
   }
 }
 
