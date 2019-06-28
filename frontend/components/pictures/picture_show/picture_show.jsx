@@ -69,12 +69,13 @@ class PictureShow extends React.Component {
         {deletePhoto}
         <div className="pictureInfo">
           <p className="picture-name">{pic_name}</p>
-          <p className="picture-info1">{description}</p>
           <LikeButtonContainer
             liked={this.props.picture.liked}
             picture_id={this.props.picture.id}
             numLikes={this.props.picture.numLikes}
           />
+          <p className="picture-info1">{description}</p>
+
           <i className="fas fa-camera-retro cameraIcon" />
           <p className="picture-info2">{camera}</p>
           <i className="fas fa-video lensIcon" />
@@ -93,6 +94,8 @@ class PictureShow extends React.Component {
           </ul>
           <form action="" onSubmit={this.handleSubmit}>
             <textarea value={this.state.text} onChange={this.handleInput} />
+            <br />
+            <br />
             <button>Add Comment</button>
           </form>
         </div>

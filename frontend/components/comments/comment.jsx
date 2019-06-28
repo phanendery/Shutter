@@ -17,11 +17,6 @@ export default class Comment extends React.Component {
     }
     return (
       <div className="comment">
-        {this.props.user === this.props.currentUser ? (
-          <button onClick={this.props.removeComment}>Delete</button>
-        ) : (
-          ""
-        )}
         <span>
           {" "}
           {this.props.user.avatar ? (
@@ -31,6 +26,11 @@ export default class Comment extends React.Component {
           )}
         </span>
         <span>{this.props.comment.comment}</span>
+        {this.props.user === this.props.currentUser ? (
+          <button onClick={this.props.removeComment}>Delete</button>
+        ) : (
+          ""
+        )}
       </div>
     );
   }

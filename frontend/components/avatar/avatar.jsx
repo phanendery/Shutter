@@ -31,9 +31,16 @@ export default class Avatar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="avatar-container">
         <form action="" onSubmit={this.handleSubmit}>
-          <input type="file" onChange={this.handleFile} />
+          <label htmlFor="avatar-load-input">
+            {/* <h2 className="choose-avatar">Choose an Avatar!</h2> */}
+            <input
+              id="avatar-load-input"
+              type="file"
+              onChange={e => this.handleFile(e)}
+            />
+          </label>
           <button className="avatar-upload-button">Upload!</button>
         </form>
       </div>

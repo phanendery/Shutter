@@ -45,15 +45,15 @@ class Dropdown extends React.Component {
               </Link>
             </li>
             <li>
+              <Link to="/avatar">
+                <button className="logout-dropdown">Change Avatar</button>
+              </Link>
+            </li>
+            <li>
               <Link to="/">
                 <button className="logout-dropdown" onClick={this.props.logout}>
                   Log Out
                 </button>
-              </Link>
-            </li>
-            <li>
-              <Link to="/avatar">
-                <button className="logout-dropdown">Change Avatar</button>
               </Link>
             </li>
           </ul>
