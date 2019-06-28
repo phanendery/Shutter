@@ -16,6 +16,15 @@
   width: 100%;
 }
 
+.column img {
+  margin: 5px;
+  transition: all 2s;
+}
+
+.column img:hover {
+  transform: scale(1.1);
+}
+
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
   .column {
