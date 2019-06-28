@@ -96,7 +96,7 @@ class PictureShow extends React.Component {
             <textarea value={this.state.text} onChange={this.handleInput} />
             <br />
             <br />
-            <button>Add Comment</button>
+            <button className="addcomment">Add Comment</button>
           </form>
         </div>
       </div>

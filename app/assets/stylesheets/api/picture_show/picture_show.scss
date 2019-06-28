@@ -9,6 +9,7 @@
 
 .showpageDiv {
   background-color: rgb(34, 34, 34);
+  height: 1200px;
 }
 
 .comment {
@@ -23,11 +24,42 @@
 .comments {
   background: white;
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  position: relative;
+  bottom: 280px;
+  left: 650px;
   li:hover {
     background: white;
   }
+  width: 400px;
 }
+
+.addcomment {
+  font: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
+    "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  padding: 7px 15px;
+  border-radius: 5px;
+  background-color: #34bf49;
+  border-color: #34bf49;
+  color: white;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+.deletecomment {
+  // display: flex;
+  // flex-direction: row;
+  padding-left: 40px;
+  border: none;
+  background: none;
+  font-size: 12px;
+}
+
+.comentext {
+  display: flex;
+  flex-direction: row;
+}
+
 .delete-button {
   font: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
     "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
@@ -63,6 +95,7 @@
   font-size: 30px;
   margin-left: 100px;
   margin-top: 40px;
+  width: 500px;
 }
 
 .picture-info2 {
@@ -74,6 +107,7 @@
   font-size: 20px;
   margin-left: 100px;
   bottom: 27px;
+  width: 500px;
 }
 
 .picture-info3 {
@@ -85,6 +119,7 @@
   margin-left: 100px;
   left: 100px;
   bottom: 27px;
+  width: 500px;
 }
 
 .picture-info4 {
@@ -95,6 +130,7 @@
   font-size: 20px;
   left: 200px;
   bottom: 27px;
+  width: 500px;
 }
 
 .pictureInfo {
@@ -133,6 +169,10 @@
   border: none;
   background: none;
   font-size: 30px;
+}
+
+#liked-icon {
+  fill: red;
 }
 
 // /*

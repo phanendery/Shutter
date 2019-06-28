@@ -25,9 +25,11 @@ export default class Comment extends React.Component {
             <i className="fas fa-user-circle profile-icon" />
           )}
         </span>
-        <span>{this.props.comment.comment}</span>
+        <span className="commentext">{this.props.comment.comment}</span>
         {this.props.user === this.props.currentUser ? (
-          <button onClick={this.props.removeComment}>Delete</button>
+          <button onClick={this.props.removeComment} className="deletecomment">
+            <i class="fas fa-times" />
+          </button>
         ) : (
           ""
         )}

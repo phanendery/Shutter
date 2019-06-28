@@ -20,11 +20,11 @@ class LikeButton extends React.Component {
       <div>
         {this.props.liked ? (
           <button className="like-button" onClick={this.handleClick}>
-            <i className="far fa-heart" />
+            <i className="fas fa-heart" id="likedicon" />
           </button>
         ) : (
           <button className="like-button" onClick={this.handleClick}>
-            Like?
+            <i className="far fa-heart" />
           </button>
         )}
         {/* <button className="like-button" onClick={this.handleClick}>
