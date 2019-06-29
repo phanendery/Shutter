@@ -3,14 +3,9 @@ import { Link } from "react-router-dom";
 
 const PictureIndexItem = props => {
   return (
-    <div>
-      <Link to={`/pictures/${props.picture.id}`} />
+    <React.Fragment>
       <img src={props.picture.photoUrl} />
-
-      {/* <button onClick={() => props.deletePicture(props.picture.id)}>
-        Delete
-      </button> */}
-    </div>
+    </React.Fragment>
   );
 };
 

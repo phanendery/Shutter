@@ -7,7 +7,7 @@ class Api::LikesController < ApplicationController
             @picture = Picture.find(@like.picture_id)
             @user = User.find(@like.user_id)
 
-            render :show
+            render "api/pictures/show"#how to call picture show here instead of likes show
         else
              render json: @like.errors.full_messages, status: 422
         end
@@ -19,7 +19,7 @@ class Api::LikesController < ApplicationController
             @like.destroy
             @picture = Picture.find(@like.picture_id)
             @user = User.find(@like.user_id)
-            render :show
+            render "api/pictures/show"
         else
             render ["Like does not exist!"], status: 422
         end

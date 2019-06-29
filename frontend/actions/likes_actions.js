@@ -17,13 +17,13 @@ export const fetchLikes = () => dispatch => {
 };
 
 export const createLike = id => dispatch => {
-  return APIUtil.createLike(id).then(like =>
-    dispatch(receivePicture(like.picture))
+  return APIUtil.createLike(id).then(picture =>
+    dispatch(receivePicture(picture))
   );
 };
 
 export const deleteLike = id => dispatch => {
-  return APIUtil.deleteLike(id).then(like =>
-    dispatch(receivePicture(like.picture))
+  return APIUtil.deleteLike(id).then(picture =>
+    dispatch(receivePicture(picture))
   );
 };
