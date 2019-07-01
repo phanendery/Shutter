@@ -7,7 +7,7 @@ class Api::LikesController < ApplicationController
             @picture = Picture.find(@like.picture_id)
             @user = User.find(@like.user_id)
 
-            render "api/pictures/show"#how to call picture show here instead of likes show
+            render "api/pictures/show"
         else
              render json: @like.errors.full_messages, status: 422
         end
@@ -25,9 +25,4 @@ class Api::LikesController < ApplicationController
         end
     end
 
-    # private
-
-    # def like_params
-    #     params.require(:like).permit(:user_id, :picture_id)
-    # end 
 end

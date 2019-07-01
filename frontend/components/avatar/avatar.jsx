@@ -34,7 +34,6 @@ export default class Avatar extends React.Component {
       <div className="avatar-container">
         <form action="" onSubmit={this.handleSubmit}>
           <label htmlFor="avatar-load-input">
-            {/* <h2 className="choose-avatar">Choose an Avatar!</h2> */}
             <input
               id="avatar-load-input"
               type="file"
