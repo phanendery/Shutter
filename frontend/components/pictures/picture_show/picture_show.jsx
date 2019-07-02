@@ -92,11 +92,20 @@ class PictureShow extends React.Component {
                 </li>
               ))}
           </ul>
+
           <form action="" onSubmit={this.handleSubmit}>
-            <textarea value={this.state.text} onChange={this.handleInput} />
+            <textarea
+              className="comment-text-area"
+              placeholder="Add a comment"
+              value={this.state.text}
+              onChange={this.handleInput}
+            />
             <br />
             <br />
-            <button className="addcomment">Add Comment</button>
+
+            <button className="addcomment">
+              <img src="https://500px.com/packs/_/_/node_modules/web-shared-components/assets/icons/comment_veryDarkGrey-37d3d99fdf1db1df0887f431af78b5a8.svg" />
+            </button>
           </form>
         </div>
       </div>
