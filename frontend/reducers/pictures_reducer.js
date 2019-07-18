@@ -15,10 +15,9 @@ const PicturesReducer = (oldState = {}, action) => {
       return action.pictures;
     }
     case RECEIVE_PICTURE:
-      let newState = merge(
-        {},
-        { oldState, [action.picture.id]: action.picture }
-      );
+      let newState = merge({}, oldState, {
+        [action.picture.id]: action.picture
+      });
       return newState;
     case REMOVE_PICTURE:
       newState = merge({}, oldState);
@@ -28,7 +27,7 @@ const PicturesReducer = (oldState = {}, action) => {
       // console.log(action);
       newState = merge({}, oldState);
       if (newState[action.comment.picture_id].comments === undefined) {
-        newState[action.comment.picture_id].comments = [];
+        newState[action.comment.picture_id].comments = {};
       }
       newState[action.comment.picture_id].comments[action.comment.id] =
         action.comment;
