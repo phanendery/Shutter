@@ -7,7 +7,7 @@ class Api::PicturesController < ApplicationController
 
     def create
         @picture = Picture.new(picture_params)
-        if @picture.save!
+        if @picture.save
             render :show
         else
             render json: @picture.errors.full_messages, status: 422

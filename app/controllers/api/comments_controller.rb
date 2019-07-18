@@ -4,7 +4,7 @@ class Api::CommentsController < ApplicationController
         @comment.user_id = current_user.id
         @comment.picture_id = params[:picture_id]
         
-        if @comment.save!
+        if @comment.save
             render :show
         else
             ender json: @comment.errors.full_messages, status: 422 
