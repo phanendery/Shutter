@@ -104,7 +104,7 @@ class PictureShow extends React.Component {
             <br />
 
             <button className="addcomment">
-              <img src="https://500px.com/packs/_/_/node_modules/web-shared-components/assets/icons/comment_veryDarkGrey-37d3d99fdf1db1df0887f431af78b5a8.svg" />
+              <i class="far fa-comments" />
             </button>
           </form>
         </div>

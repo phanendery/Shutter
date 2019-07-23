@@ -28,7 +28,7 @@ export default class Comment extends React.Component {
         <span className="commentext">{this.props.comment.comment}</span>
         {this.props.user === this.props.currentUser ? (
           <button onClick={this.props.removeComment} className="deletecomment">
-            <i class="fas fa-times" />
+            <i className="fas fa-times" />
           </button>
         ) : (
           ""
