@@ -7,12 +7,12 @@
   max-height: 70%;
 }
 
-a,
-a:active,
-a:focus {
-  outline: none;
+a{
+  outline: 0;
 }
-
+a:hover, a:active, a:focus {
+ outline: 0;
+}
 .showpageDiv {
   background-color: rgb(34, 34, 34);
   height: 1200px;
@@ -119,7 +119,7 @@ a:focus {
   top: 450px;
   flex: 50%;
   text-align: right;
-  position: fixed;
+  // position: fixed;
 }
 
 .picture-name {

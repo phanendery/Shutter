@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 class Dropdown extends React.Component {
   constructor(props) {
     super(props);
@@ -20,15 +21,19 @@ class Dropdown extends React.Component {
   }
   hideDropdownMenu() {
     this.setState({ displayMenu: false }, () => {
-      document.removeEventListener("click", this.hideDropdownMenu);
-    });
+      document.addEventListener("onmouse", this.hideDropdownMenu); //need to go away on mouse out
+    }); //difference between add and remove?
   }
 
   render() {
     // console.log(this.props.currentUser);
     return (
       <div className="dropdown">
-        <div className="button" onClick={this.showDropdownMenu}>
+        <div
+          className="button"
+          onMouseOver={this.showDropdownMenu}
+          onMouseLeave={this.hideDropdownMenu}
+        >
           {" "}
           {this.props.currentUser.avatar ? (
             <img src={this.props.currentUser.avatar} />
@@ -39,6 +44,7 @@ class Dropdown extends React.Component {
 
         {this.state.displayMenu ? (
           <ul>
+            <div className="arrow-up"></div>
             <li>
               <Link to={`/users/${this.props.currentUser.id}`}>
                 <button className="logout-dropdown">Profile</button>
