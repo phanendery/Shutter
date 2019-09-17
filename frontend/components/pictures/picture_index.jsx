@@ -10,6 +10,7 @@ class PictureIndex extends React.Component {
 
   render() {
     let pictures = this.props.pictures.map(picture => {
+      // debugger;
       return (
         <div className="column">
           <Link to={`/pictures/${picture.id}`}>

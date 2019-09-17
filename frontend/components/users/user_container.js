@@ -1,10 +1,14 @@
 import { connect } from "react-redux";
-import user from "./user";
+import pictureIndex from "../pictures/picture_index";
 import { fetchPictures, deletePicture } from "../../actions/pictures_actions";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   let currentUser = state.session.id;
   let pictures = Object.values(state.entities.pictures);
+  pictures = pictures.filter(picture =>{
+    return ownProps.match.params.userId === currentUser.toString();
+  })
+  // debugger;
   return {
     pictures: pictures,
     currentUser
@@ -21,4 +25,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(user);
+)(pictureIndex);

@@ -7,6 +7,12 @@
   max-height: 70%;
 }
 
+a,
+a:active,
+a:focus {
+  outline: none;
+}
+
 .showpageDiv {
   background-color: rgb(34, 34, 34);
   height: 1200px;
@@ -205,13 +211,12 @@
   position: relative;
   margin-left: 650px;
   background-color: white;
-  fill: red;
   padding: 0;
   border: none;
   background: none;
   font-size: 30px;
 }
 
-#liked-icon {
-  fill: red;
+.fa-heart:before {
+  color: red;
 }

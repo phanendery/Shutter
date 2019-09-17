@@ -16,7 +16,7 @@
     width: 100%;
     > img {
       // margin: 5px;
-      transition: all 2s;
+      transition: all 0.25s;
       height: 100%;
       width: 100%;
       object-fit: cover;
@@ -25,27 +25,8 @@
   }
 }
 
-// .column {
-//   flex: 25%;
-//   max-width: 25%;
-//   padding: 0 4px;
-//   box-sizing: border-box;
-// }
-
-// .column img {
-//   margin-top: 8px;
-//   vertical-align: middle;
-//   width: 100%;
-
-// }
-
-// .column img {
-//   margin: 5px;
-//   transition: all 2s;
-// }
-
 .column img:hover {
-  transform: scale(1.1);
+  transform: scale(1.025);
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
