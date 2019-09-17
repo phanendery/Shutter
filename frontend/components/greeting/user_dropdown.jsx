@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 class Dropdown extends React.Component {
   constructor(props) {
     super(props);
@@ -43,7 +42,10 @@ class Dropdown extends React.Component {
         </div>
 
         {this.state.displayMenu ? (
-          <ul>
+          <ul
+            onMouseEnter={this.showDropdownMenu}
+            onMouseLeave={this.hideDropdownMenu}
+          >
             <div className="arrow-up"></div>
             <li>
               <Link to={`/users/${this.props.currentUser.id}`}>
@@ -52,7 +54,7 @@ class Dropdown extends React.Component {
             </li>
             <li>
               <Link to="/avatar">
-                <button className="logout-dropdown">Change Avatar</button>
+                <button className="logout-dropdown">Avatar</button>
               </Link>
             </li>
             <li>
