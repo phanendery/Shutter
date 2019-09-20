@@ -10,7 +10,9 @@ class PictureShow extends React.Component {
       title: "",
       photoFile: null,
       photoUrl: null,
-      text: ""
+      text: "",
+      imageLoaded: false,
+      spinnerDone: false
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,7 +20,11 @@ class PictureShow extends React.Component {
 
   componentDidMount() {
     let pictureId = this.props.match.params.pictureId;
+    console.log(this.props.fetchPicture);
     this.props.fetchPicture(pictureId);
+    setTimeout(() => {
+      this.setState({ spinnerDone: true });
+    }, 1500);
   }
 
   handleSubmit(e) {
@@ -34,7 +40,8 @@ class PictureShow extends React.Component {
 
   render() {
     let photo = this.props.picture;
-    if (photo === undefined) {
+    if (!photo) {
+      console.log("loading");
       return null;
     }
     let pic_name = photo.pic_name;
@@ -65,8 +72,34 @@ class PictureShow extends React.Component {
 
     return (
       <div className="showpageDiv">
-        <img src={photoUrl} alt={pic_name} className="single-photo" />
-        {deletePhoto}
+        <div className="imgContainer">
+          {this.state.spinnerDone ? (
+            ""
+          ) : (
+            <div class="lds-roller">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          )}
+          <img
+            src={photoUrl}
+            alt={pic_name}
+            className="single-photo"
+            style={{
+              opacity: this.state.imageLoaded && this.state.spinnerDone ? 1 : 0,
+              transition: "all 1s linear"
+            }}
+            onLoad={() => {
+              this.setState({ imageLoaded: true });
+            }}
+          />
+        </div>
         <div className="pictureInfo">
           <p className="picture-name">{pic_name}</p>
           <LikeButtonContainer
@@ -74,6 +107,7 @@ class PictureShow extends React.Component {
             picture_id={this.props.picture.id}
             numLikes={this.props.picture.numLikes}
           />
+          {deletePhoto}
           <p className="picture-info1">{description}</p>
 
           <i className="fas fa-camera-retro cameraIcon" />
@@ -104,7 +138,7 @@ class PictureShow extends React.Component {
             <br />
 
             <button className="addcomment">
-              <i class="far fa-comments" />
+              <i className="far fa-comments" />
             </button>
           </form>
         </div>

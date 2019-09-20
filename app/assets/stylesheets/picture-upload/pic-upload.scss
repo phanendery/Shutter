@@ -65,14 +65,16 @@
   color: white;
   margin-left: 10%;
   margin-top: 5%;
+  margin-right: 2%;
+  text-align: center;
 }
 
 #image-form {
   display: flex;
+  height: 60vh;
 }
 
-#close-button {
-  display: flex;
+.close-button {
   margin-left: 80%;
   margin-bottom: 1%;
   padding: 7px 15px;
@@ -80,6 +82,7 @@
   background-color: red;
   border-color: red;
   color: white;
+  text-align: center;
 }
 
 .post-body {
@@ -109,13 +112,14 @@
   margin-top: 1%;
 }
 
-#title-font {
+.title-font {
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
   font-size: 20px;
   margin-bottom: 5%;
   width: 150px;
   color: grey;
+  display: block;
 }
 
 #file-upload-input {
@@ -126,19 +130,23 @@
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
   margin-top: 5%;
-  border: 10px;
-  margin-left: 8%;
   padding: 7px 15px;
   border-radius: 5px;
   background-color: #34bf49;
   border-color: #34bf49;
   color: white;
-  width: 120px;
+  text-align: center;
+  padding: 10px;
 }
 
 .upload-button-plus {
   color: grey;
-  margin-top: 20px;
+  margin-top: 27px;
   margin-right: 15px;
   font-size: 35px;
+}
+
+.uploadAndChoose {
+  display: flex;
+  flex: wrap;
 }

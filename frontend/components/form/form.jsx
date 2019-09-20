@@ -63,16 +63,7 @@ class Form extends React.Component {
         <form id="image-form" onSubmit={e => this.handleSubmit(e)}>
           <div id="phanny-image">{preview}</div>
           <div id="phanny-pack">
-            <label htmlFor="file-upload-input">
-              <h2 className="upload-button-file">Choose a Photo</h2>
-              <input
-                id="file-upload-input"
-                type="file"
-                onChange={e => this.handleFile(e)}
-              />
-            </label>
-
-            <label htmlFor="post-body" id="title-font">
+            <label htmlFor="post-body" className="title-font">
               Title:{" "}
             </label>
             <input
@@ -82,7 +73,7 @@ class Form extends React.Component {
               onChange={this.handleInput("title")}
             />
             <br />
-            <label htmlFor="post-body" id="title-font">
+            <label htmlFor="post-body" className="title-font">
               Description:{" "}
             </label>
             <input
@@ -92,7 +83,7 @@ class Form extends React.Component {
               onChange={this.handleInput("description")}
             />
             <br />
-            <label htmlFor="post-body" id="title-font">
+            <label htmlFor="post-body" className="title-font">
               Camera (Optional):{" "}
             </label>
             <input
@@ -102,7 +93,7 @@ class Form extends React.Component {
               onChange={this.handleInput("camera")}
             />
             <br />
-            <label htmlFor="post-body" id="title-font">
+            <label htmlFor="post-body" className="title-font">
               Lens (Optional):{" "}
             </label>
             <input
@@ -112,7 +103,7 @@ class Form extends React.Component {
               onChange={this.handleInput("lens")}
             />
             <br />
-            <label htmlFor="post-body" id="title-font">
+            <label htmlFor="post-body" className="title-font">
               Focal Length (Optional):{" "}
             </label>
             <input
@@ -121,8 +112,20 @@ class Form extends React.Component {
               value={this.state.focal}
               onChange={this.handleInput("focal")}
             />
+          
 
-            <button className="upload-modal-button">Upload Picture</button>
+              <label htmlFor="file-upload-input">
+                <input
+                  id="file-upload-input"
+                  type="file"
+                  onChange={e => this.handleFile(e)}
+                />
+              </label>
+            <div className="uploadAndChoose">
+              <h2 className="upload-button-file">Choose a Photo</h2>
+
+              <button className="upload-modal-button">Upload Picture</button>
+            </div>
           </div>
         </form>
       </div>

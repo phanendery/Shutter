@@ -19,6 +19,10 @@ class PictureUpload extends React.Component {
     this.setState({ showModal: false });
   }
 
+  componentDidMount() {
+    this.showModal();
+  }
+
   render() {
     const { postPicture, currentUser } = this.props;
     return (
