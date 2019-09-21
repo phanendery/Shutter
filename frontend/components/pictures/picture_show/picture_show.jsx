@@ -100,47 +100,68 @@ class PictureShow extends React.Component {
             }}
           />
         </div>
-        <div className="pictureInfo">
-          <p className="picture-name">{pic_name}</p>
-          <LikeButtonContainer
-            liked={this.props.picture.liked}
-            picture_id={this.props.picture.id}
-            numLikes={this.props.picture.numLikes}
-          />
-          {deletePhoto}
-          <p className="picture-info1">{description}</p>
+        <div className="pictureInfoContainer">
+          <div className="pictureInfo">
+            <div className="titleAndLike">
+              <p className="picture-name">{pic_name}</p>
+              <LikeButtonContainer
+                liked={this.props.picture.liked}
+                picture_id={this.props.picture.id}
+                numLikes={this.props.picture.numLikes}
+              />
+            </div>
 
-          <i className="fas fa-camera-retro cameraIcon" />
-          <p className="picture-info2">{camera}</p>
-          <i className="fas fa-video lensIcon" />
-          <p className="picture-info3">{lens}</p>
-          <i className="fas fa-stream infoIcon" />
-          <p className="picture-info4">{focal}</p>
-        </div>
-        <div className="comments">
-          <ul>
-            {this.props.picture.comments &&
-              Object.values(this.props.picture.comments).map(comment => (
-                <li key={comment.id}>
-                  <CommentContainer comment={comment} />
-                </li>
-              ))}
-          </ul>
+            <p className="picture-info1">{description}</p>
+            <div className="specsAndComments">
+              <div className="specsAndDelete">
+              <div className="specHolder">
+                <div className="specs">
+                  <i className="fas fa-camera-retro cameraIcon" />
+                  <p className="picture-info2">{camera}</p>
+                </div>
+                <div className="specs">
+                  <i className="fas fa-video lensIcon" />
+                  <p className="picture-info2">{lens}</p>
+                </div>
+                <div className="specs">
+                  <i className="fas fa-stream infoIcon" />
+                  <p className="picture-info2">{focal}</p>
+                </div>
+              </div>
+              <div className="deleteButton">{deletePhoto}</div>
+              </div>
+              <div className="comments">
+                <form action="" onSubmit={this.handleSubmit} className="formComment">
+                  <div className="textAreaButton">
+                  <textarea
+                    className="comment-text-area"
+                    placeholder="Add a comment"
+                    value={this.state.text}
+                    onChange={this.handleInput}
+                  />
+                  <button className="addcomment">
+                    <i className="far fa-comments" />
+                  </button>
+                  </div>
+                  <ul className="commentsList">
+                    {this.props.picture.comments &&
+                      Object.values(this.props.picture.comments).map(
+                        comment => (
+                          <li key={comment.id}>
+                            <CommentContainer comment={comment} />
+                          </li>
+                        )
+                      )}
+                  </ul>
 
-          <form action="" onSubmit={this.handleSubmit}>
-            <textarea
-              className="comment-text-area"
-              placeholder="Add a comment"
-              value={this.state.text}
-              onChange={this.handleInput}
-            />
-            <br />
-            <br />
+                  <br />
+                  <br />
 
-            <button className="addcomment">
-              <i className="far fa-comments" />
-            </button>
-          </form>
+                  
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

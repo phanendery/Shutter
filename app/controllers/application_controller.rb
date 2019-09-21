@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   def current_user
     return nil unless session[:session_token]
     @current_user ||= User.with_attached_avatar.find_by(session_token: session[:session_token])
+    @current_user
   end
 
   def logged_in?

@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { login } from "../../util/session_api_util";
+import { Link } from "react-router-dom";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -59,48 +60,51 @@ class SessionForm extends React.Component {
     }
     return (
       <div className="login-form-container">
-        <div className="login-text">
-          {this.props.formType === "Log In"
-            ? "Log In to Shutter"
-            : "Sign Up for Shutter"}
-        </div>
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br />
-          {this.renderErrors()}
-          <div className="login-form">
-            <br />
-            <label className="login-header">
-              <div className="email-tag">Email</div>
-              <br />
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.update("username")}
-                className="login-input1"
-              />
-            </label>
-            <br />
-            <label className="login-header">
-              <div className="password-tag">Password</div>
-
-              <br />
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                className="login-input2"
-              />
-            </label>
-            <br />
-            <input
-              className="session-submit"
-              type="submit"
-              value={this.props.formType}
-            />
-            <br />
-            {demologin}
+        <div className="borderBox">
+          <div className="login-text">
+            {this.props.formType === "Log In"
+              ? "Log In to Shutter"
+              : "Sign Up for Shutter"}
           </div>
-        </form>
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            {this.renderErrors()}
+            <div className="login-form">
+              <br />
+              <label className="login-header">
+                <div className="email-tag">Email</div>
+
+                <input
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  className="login-input1"
+                />
+              </label>
+              <br />
+              <label className="login-header">
+                <div className="password-tag">Password</div>
+
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  className="login-input2"
+                />
+              </label>
+              <br />
+              <input
+                className="session-submit"
+                type="submit"
+                value={this.props.formType}
+              />
+              <br />
+              {demologin}
+              {/* <p>
+                Don't have an account? <Link to="/signup">Sign Up</Link>
+              </p> */}
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

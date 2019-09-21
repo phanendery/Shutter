@@ -87,12 +87,13 @@ a {
 }
 
 .login-form-container {
-  position: relative;
-  top: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  min-height: 100%;
+  background: #f7f8fA;
+  height: 100vh;
 }
 
 .login-form {
@@ -118,7 +119,16 @@ a {
 }
 
 .button-holder {
-  // display: flex;
   margin-top: -6px;
   margin-right: 25px;
+}
+
+.borderBox {
+  border: 1px solid #eeeff2;
+  padding-top: 80px;
+  padding-right: 50px;
+  padding-bottom: 80px;
+  padding-left: 50px;
+  border-radius: 2.5px;
+  background: white;
 }

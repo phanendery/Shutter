@@ -12,5 +12,6 @@ Rails.application.routes.draw do
         resources :comments, only: [:create]
     end
     resources :comments, only: [:destroy]
+    resources :folders, except: [:edit,:new]
   end
 end

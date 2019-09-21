@@ -1,18 +1,16 @@
 # == Schema Information
 #
-# Table name: comments
+# Table name: folders
 #
 #  id         :bigint           not null, primary key
+#  name       :string           not null
 #  user_id    :integer          not null
-#  picture_id :integer          not null
-#  comment    :text             not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Comment < ApplicationRecord
-    validates :comment, presence: true
-
+class Folder < ApplicationRecord
+    validates :name, presence: true
     belongs_to :user
-    belongs_to :picture
+    has_many :pictures
 end
