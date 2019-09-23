@@ -18,12 +18,19 @@ class User extends React.Component {
     }
 
     return (
-      <div className="row">
-        {matchPics.map(picture => (
-          <Link to={`/pictures/${picture.id}`} className="column">
-            <PictureIndexItem key={`${picture.id}`} picture={picture} />
-          </Link>
-        ))}
+      <div className="userContent">
+        <div className="pictureHeader">
+          <h1>My Pictures</h1>
+        </div>
+        <div className="userPagePictures">
+          <div className="row">
+            {matchPics.map(picture => (
+              <Link to={`/pictures/${picture.id}`} className="column">
+                <PictureIndexItem key={`${picture.id}`} picture={picture} />
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     );
   }

@@ -82,13 +82,13 @@ class Dropdown extends React.Component {
             <div className="arrow-up"></div>
             <li>
               <Link to={`/users/${this.props.currentUser.id}`}>
-                <button className="logout-dropdown">Profile</button>
+                <button className="logout-dropdown">My Pictures</button>
               </Link>
             </li>
             <li>
               {/* <Link to="/avatar"> */}
               <button className="logout-dropdown" onClick={this.showModal}>
-                Avatar
+                My Avatar
               </button>
               {/* </Link> */}
             </li>
