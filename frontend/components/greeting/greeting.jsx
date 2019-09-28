@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Dropdown from "./user_dropdown_container";
 
 const Greeting = ({ currentUser, logout }) => {
+  // console.log(currentUser);
   const sessionLinks = () => (
     <div className="button-holder">
       <nav className="login-signup">
@@ -18,9 +19,9 @@ const Greeting = ({ currentUser, logout }) => {
   );
   const personalGreeting = () => (
     <hgroup className="header-group">
-      <Link className="discover-navbar" to="/pictures">
+      {/* <Link className="discover-navbar" to="/pictures">
         Discover
-      </Link>
+      </Link> */}
       <div className="spacer" />
       <Dropdown />
       <Link to="/pictures/new">

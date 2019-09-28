@@ -7,7 +7,8 @@ class Dropdown extends React.Component {
     super(props);
     this.state = {
       displayMenu: false,
-      showModal: false
+      showModal: false,
+      avatarPic: this.props.currentUser.avatar // ASK ETHAN HOW TO SOURCE A PREVIEW
     };
 
     this.showModal = this.showModal.bind(this);
@@ -27,8 +28,8 @@ class Dropdown extends React.Component {
   }
   hideDropdownMenu() {
     this.setState({ displayMenu: false }, () => {
-      document.addEventListener("onmouse", this.hideDropdownMenu); 
-    }); 
+      document.addEventListener("onmouse", this.hideDropdownMenu);
+    });
   }
 
   showModal() {
@@ -52,8 +53,10 @@ class Dropdown extends React.Component {
 
   handleFile(e) {
     e.preventDefault();
+    // console.log(e.target.files);
     this.setState({
-      avatar: e.target.files[0]
+      avatar: e.target.files[0],
+      avatarPic: e.target.files[0].name
     });
   }
 
@@ -81,16 +84,25 @@ class Dropdown extends React.Component {
           >
             <div className="arrow-up"></div>
             <li>
+              <Link to={`/pictures`}>
+                <button className="logout-dropdown">Discover</button>
+              </Link>
+            </li>
+            <li>
+              <button className="logout-dropdown" onClick={this.showModal}>
+                My Avatar
+              </button>
+            </li>
+            <li>
               <Link to={`/users/${this.props.currentUser.id}`}>
                 <button className="logout-dropdown">My Pictures</button>
               </Link>
             </li>
+
             <li>
-              {/* <Link to="/avatar"> */}
-              <button className="logout-dropdown" onClick={this.showModal}>
-                My Avatar
-              </button>
-              {/* </Link> */}
+              {/* <Link to="/folders">
+                <button className="logout-dropdown">My Folders</button>
+              </Link> */}
             </li>
             <li>
               <Link to="/">
@@ -99,20 +111,60 @@ class Dropdown extends React.Component {
                 </button>
               </Link>
             </li>
+            <li>
+              <button className="logout-dropdown"> </button>
+            </li>
+            <li>
+              <a href="https://github.com/phanendery" target="blank">
+                <button className="logout-dropdown">
+                  <i className="fab fa-github"></i> Github
+                </button>
+              </a>
+            </li>
+            <li>
+              <a href="https://phanendery.github.io/Portfolio/" target="blank">
+                <button className="logout-dropdown">Portfolio</button>
+              </a>
+            </li>
           </ul>
         ) : null}
-        <Modal handleClose={this.hideModal} show={this.state.showModal}>
-          <div>
-            <form action="" onSubmit={this.handleSubmit}>
-              <label htmlFor="avatar-load-input">
-                <input
-                  id="avatar-load-input"
-                  type="file"
-                  onChange={e => this.handleFile(e)}
-                />
-              </label>
-              <button className="avatar-upload-button">Upload!</button>
-            </form>
+        <Modal show={this.state.showModal}>
+          <div className="uploadAvatarContainer">
+            <div className="avatarHolder">
+              <div className="avatarPreview">
+                <div className="avatarPreviewPlaceHolder">
+                  {/* <div className="button"> */}
+                  <img
+                    src={this.state.avatarPic}
+                    className="avatarPreviewPicture"
+                  ></img>
+                  {/* </div> */}
+                </div>
+              </div>
+              <div className="usernameHolder">
+                {this.props.currentUser.username}
+              </div>
+              <form action="">
+                <label htmlFor="avatar-load-input">
+                  <input
+                    className="avatarChooseFile"
+                    id="avatar-load-input"
+                    type="file"
+                    onChange={e => this.handleFile(e)}
+                  />
+                </label>
+              </form>
+            </div>
+            <div className="avatarButtons2">
+              <div className="avatarButtons">
+                <button onClick={this.handleSubmit} className="saveButton">
+                  Save
+                </button>
+                <button className="cancelButton" onClick={this.hideModal}>
+                  Cancel
+                </button>
+              </div>
+            </div>
           </div>
         </Modal>
       </div>

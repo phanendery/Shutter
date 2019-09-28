@@ -1,7 +1,8 @@
 class Api::FoldersController < ApplicationController
 
     def index 
-        @folders = Folder.all
+        @folders = current_user.folders
+        # debugger
         render :index
     end
 
@@ -35,9 +36,11 @@ class Api::FoldersController < ApplicationController
     end
     
     def destroy
-        @folder = Folder.find(params[:id])
-        @folder.destroy
 
+        @folder = Folder.find(params[:id])
+        # debugger
+        @folder.destroy
+        @folders = current_user.folders
         render :index
     end
 

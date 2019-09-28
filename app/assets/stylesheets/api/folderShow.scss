@@ -1,0 +1,42 @@
+.folderAndDelete {
+  width: 150px;
+}
+
+.folderList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.folderHolder {
+  display: flex;
+  flex-direction: column;
+}
+
+.folderTitle {
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  font-size: 20px;
+}
+
+.folderDelete {
+  //   margin-top: -7px;
+  text-align: right;
+  width: 95px;
+}
+
+.fa-folder:before {
+  font-size: 100px;
+  color: rgb(64, 219, 224);
+}
+
+.fa-folder-plus:before {
+  font-size: 100px;
+  color: rgb(6, 43, 145);
+}
+
+.folderIndex {
+  padding: 40px;
+}
+
+.addFolder {
+}

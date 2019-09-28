@@ -53,25 +53,29 @@
 .upload-form {
   font: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
     "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  // width: 60%;
+}
+
+.uploadModalBox {
+  // width: 60%;
 }
 
 .upload-modal-button {
   font: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
     "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
-  padding: 7px 15px;
-  border-radius: 5px;
-  background-color: #34bf49;
-  border-color: #34bf49;
+  padding: 5px 20px;
+  border-radius: 50px;
+  background-color: #19d6c0;
+  // border-color: #34bf49;
   color: white;
-  margin-left: 10%;
-  margin-top: 5%;
-  margin-right: 2%;
+  // height: 25px;
   text-align: center;
 }
 
 #image-form {
   display: flex;
-  height: 60vh;
+  // height: 60vh;
+  flex-direction: column;
 }
 
 .close-button {
@@ -88,42 +92,83 @@
 .post-body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 300px;
-  margin-top: 6%;
+  // justify-content: center;
+  width: 100%;
+  // margin-top: 6%;
+  border: none;
+  background-color: #eee;
+  box-shadow: none;
+}
+
+.post-bodyDescription {
+  height: 100px;
+  background-color: #eee;
+  box-shadow: none;
+  border: none;
+  width: 100%;
 }
 
 #phanny-image {
   width: 70vh;
-  margin-left: 1%;
-  margin-top: 1%;
-  height: 70vh;
 }
 
 #phanny-image img {
-  margin-left: 1%;
-  margin-top: 1%;
-  height: 70%;
+  // margin-left: 1%;
+  // margin-top: 1%;
+  // background: grey;
+  width: auto;
+}
+
+.phannyImageandPack {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.previewPlaceholder {
+  background: lightgrey;
+  width: 100%;
+  height: 100%;
+}
+
+.previewPhoto {
+  height: 300px;
   width: auto;
 }
 
 #phanny-pack {
-  margin-left: 40%;
-  margin-top: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+  padding-left: 15px;
 }
 
 .title-font {
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
-  font-size: 20px;
-  margin-bottom: 5%;
-  width: 150px;
-  color: grey;
+  font-size: 15px;
+  margin-bottom: 5px;
+  // width: 150px;
+  color: black;
   display: block;
 }
 
 #file-upload-input {
-  visibility: hidden;
+  // visibility: hidden;
+  padding-top: 15px;
+  margin-top: 5px;
+  margin-left: 5px;
+  position: absolute;
+  // z-index: 1;
+}
+
+.inputStyling {
+  margin-bottom: 20px;
+}
+
+#focalLength {
+  margin-bottom: 0;
 }
 
 .upload-button-file {
@@ -137,6 +182,7 @@
   color: white;
   text-align: center;
   padding: 10px;
+  // z-index: -1;
 }
 
 .upload-button-plus {
@@ -148,5 +194,38 @@
 
 .uploadAndChoose {
   display: flex;
-  flex: wrap;
+  justify-content: flex-end;
+  padding: 0px 35px 35px 20px;
+}
+
+label.fileUpload input[type="file"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+.fileUpload {
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  margin-top: 5%;
+  padding: 7px 15px;
+  border-radius: 5px;
+  background-color: #19d6c0;
+  border-color: #19d6c0;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.fileUpload:hover {
+  background: #70d6ca;
+  cursor: pointer;
+}
+.fileUpload:active {
+  background: #70d6ca;
+}
+.fileUpload :invalid + span {
+  // color: #a44;
+}
+.fileUpload :valid + span {
+  color: white;
 }

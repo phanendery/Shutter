@@ -29,8 +29,9 @@ html body {
   max-width: 100%;
   width: 500px; //600
   height: auto;
-  position: relative;
+  // position: relative;
   left: 35px;
+  z-index: inherit;
 }
 
 .home-text {

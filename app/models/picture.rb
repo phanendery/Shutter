@@ -17,7 +17,7 @@
 class Picture < ApplicationRecord
     validates :pic_name, :user_id, presence: true
     belongs_to :user
-    belongs_to :folder    
+    belongs_to :folder, optional: :true   
     has_one_attached :photo
     has_many :likes
     has_many :comments

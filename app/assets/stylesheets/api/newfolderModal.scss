@@ -1,0 +1,46 @@
+.folderModal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.folderModalClose {
+  margin-top: 20px;
+  display: flex;
+}
+
+.folderNameInput {
+  margin-top: 15px;
+  margin-left: 15px;
+  display: flex;
+  height: 100px;
+}
+
+.createFolderButton {
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  padding: 0px 20px;
+  margin-top: 10px;
+  border-radius: 25px;
+  background-color: #42a9e4;
+  font-size: 16px;
+  height: 30px;
+  width: 125px;
+}
+
+.folderModalClose {
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  background-color: blue;
+  font-size: 16px;
+  height: 30px;
+  width: 85px;
+  padding-left: 10px;
+  margin-top: 50px;
+  margin-right: 40px;
+}

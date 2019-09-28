@@ -9,6 +9,9 @@ import PictureShowContainer from "./pictures/picture_show/picture_show_container
 import PictureUploadContainer from "./pictures/picture_upload/picture_upload_container";
 import UserContainer from "./users/user_container";
 import AvatarContainer from "./avatar/avatar_container";
+import FolderContainer from "./folders/folder_container";
+import FolderShowContainer from "./folders/folder_show_container";
+import Carousel from "./home/carousel/carousel";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 const App = () => (
@@ -18,7 +21,7 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <Route path="/avatar" component={AvatarContainer} />
+      {/* <Route path="/avatar" component={AvatarContainer} /> */}
       <Route exact path="/users/:userId" component={UserContainer} />
       <Route exact path="/pictures/new" component={PictureUploadContainer} />
       <Route
@@ -27,6 +30,9 @@ const App = () => (
         component={PictureShowContainer}
       />
       <Route exact path="/pictures" component={PictureIndexContainer} />
+      <Route exact path="/folders/:folderId" component={FolderShowContainer} />
+      {/* <Route exact path="/test" component={Carousel} /> */}
+      <Route exact path="/folders" component={FolderContainer} />
       <Route exact path="/" component={HomeContainer} />
       <Redirect to="/" />
     </Switch>

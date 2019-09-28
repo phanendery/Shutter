@@ -81,3 +81,10 @@ li:hover {
   bottom: 7px;
   margin-left: 14px;
 }
+
+.avatarPreviewPicture {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}

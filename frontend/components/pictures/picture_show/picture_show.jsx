@@ -12,19 +12,24 @@ class PictureShow extends React.Component {
       photoUrl: null,
       text: "",
       imageLoaded: false,
-      spinnerDone: false
+      spinnerDone: false,
+      folders: {}
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.addToFolder = this.addToFolder.bind(this);
   }
 
   componentDidMount() {
     let pictureId = this.props.match.params.pictureId;
-    console.log(this.props.fetchPicture);
+    // console.log(this.props.fetchPicture);
     this.props.fetchPicture(pictureId);
     setTimeout(() => {
       this.setState({ spinnerDone: true });
     }, 1500);
+    this.props.fetchFolders().then(result => {
+      this.setState({ folders: result.folders });
+    });
   }
 
   handleSubmit(e) {
@@ -38,10 +43,26 @@ class PictureShow extends React.Component {
     this.setState({ text: e.target.value });
   }
 
+  addToFolder() {
+    let e = document.getElementById("folderSelector");
+
+    let folderOptions = Object.keys(e.options);
+    for (let i = 0; i < folderOptions.length; i++) {
+      let key = folderOptions[i];
+      if (e.options[key].selected === true) {
+        let folder_id = e.options[key].value;
+        this.props.updatePicture({
+          id: this.props.pictureId,
+          picture: { folder_id }
+        });
+      }
+    }
+  }
+
   render() {
     let photo = this.props.picture;
     if (!photo) {
-      console.log("loading");
+      // console.log("loading");
       return null;
     }
     let pic_name = photo.pic_name;
@@ -76,7 +97,7 @@ class PictureShow extends React.Component {
           {this.state.spinnerDone ? (
             ""
           ) : (
-            <div class="lds-roller">
+            <div className="lds-roller">
               <div></div>
               <div></div>
               <div></div>
@@ -114,34 +135,38 @@ class PictureShow extends React.Component {
             <p className="picture-info1">{description}</p>
             <div className="specsAndComments">
               <div className="specsAndDelete">
-              <div className="specHolder">
-                <div className="specs">
-                  <i className="fas fa-camera-retro cameraIcon" />
-                  <p className="picture-info2">{camera}</p>
+                <div className="specHolder">
+                  <div className="specs">
+                    <i className="fas fa-camera-retro cameraIcon" />
+                    <p className="picture-info2">{camera}</p>
+                  </div>
+                  <div className="specs">
+                    <i className="fas fa-video lensIcon" />
+                    <p className="picture-info2">{lens}</p>
+                  </div>
+                  <div className="specs">
+                    <i className="fas fa-stream infoIcon" />
+                    <p className="picture-info2">{focal}</p>
+                  </div>
                 </div>
-                <div className="specs">
-                  <i className="fas fa-video lensIcon" />
-                  <p className="picture-info2">{lens}</p>
-                </div>
-                <div className="specs">
-                  <i className="fas fa-stream infoIcon" />
-                  <p className="picture-info2">{focal}</p>
-                </div>
-              </div>
-              <div className="deleteButton">{deletePhoto}</div>
+                <div className="deleteButton">{deletePhoto}</div>
               </div>
               <div className="comments">
-                <form action="" onSubmit={this.handleSubmit} className="formComment">
+                <form
+                  action=""
+                  onSubmit={this.handleSubmit}
+                  className="formComment"
+                >
                   <div className="textAreaButton">
-                  <textarea
-                    className="comment-text-area"
-                    placeholder="Add a comment"
-                    value={this.state.text}
-                    onChange={this.handleInput}
-                  />
-                  <button className="addcomment">
-                    <i className="far fa-comments" />
-                  </button>
+                    <textarea
+                      className="comment-text-area"
+                      placeholder="Add a comment"
+                      value={this.state.text}
+                      onChange={this.handleInput}
+                    />
+                    <button className="addcomment">
+                      <i className="far fa-comments" />
+                    </button>
                   </div>
                   <ul className="commentsList">
                     {this.props.picture.comments &&
@@ -156,9 +181,17 @@ class PictureShow extends React.Component {
 
                   <br />
                   <br />
-
-                  
                 </form>
+                {/* <select id="folderSelector">
+                  <option disabled selected>
+                    Select Folder
+                  </option>
+                  {Object.keys(this.state.folders).map(id => {
+                    let folder = this.state.folders[id];
+                    return <option value={id}>{folder.name}</option>;
+                  })}
+                </select>
+                <button onClick={this.addToFolder}>Add to folder!</button> */}
               </div>
             </div>
           </div>

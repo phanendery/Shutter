@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 class PictureIndex extends React.Component {
   componentDidMount() {
-    console.log(this.props.fetchPictures());
     this.props.fetchPictures();
   }
 
@@ -19,7 +18,11 @@ class PictureIndex extends React.Component {
         </div>
       );
     });
-    return <div className="row">{pictures}</div>;
+    return (
+      // <div className="picIndexWrapper">
+        <div className="row">{pictures}</div>
+      // {/* </div> */}
+    );
   }
 }
 

@@ -30,8 +30,9 @@ class PictureUpload extends React.Component {
         <button className="upload-button" onClick={this.showModal}>
           <i className="fas fa-images upload-image" />
         </button>
+
         <Modal handleClose={this.hideModal} show={this.state.showModal}>
-          <div>
+          <div className="uploadModalBox">
             <Form postPicture={postPicture} currentUser={currentUser} />
           </div>
         </Modal>

@@ -1,17 +1,19 @@
 import React from "react";
 
-const Modal = ({ handleClose, show, children }) => {
-    const showHideClassName = show ? "modal display-block" : "modal display-none";
-    return (
-        <div className={showHideClassName}>
-            <section className={"modal-main2"}>
-                {children}
-                <button className="close-button" onClick={handleClose}>
-                    Close
-        </button>
-            </section>
-        </div>
-    );
+const Modal2 = ({ handleClose, show, children }) => {
+  const showHideClassName = show ? "modal display-block" : "modal display-none";
+  return (
+    <div className={showHideClassName}>
+      <section className={"modal-main2"}>
+        <div className="green" />
+        <div className="white"></div>
+        {children}
+        {/* <button className="close-button2" onClick={handleClose}>
+          Cancel
+        </button> */}
+      </section>
+    </div>
+  );
 };
 
-export default Modal;
+export default Modal2;

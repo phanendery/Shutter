@@ -1,0 +1,48 @@
+.folderShowPage {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 10px;
+}
+.pictureAndDelete {
+  flex: 25%;
+  max-width: 25%;
+  padding: 15px;
+  box-sizing: border-box;
+  height: 200px;
+  > a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    > img {
+      // margin: 5px;
+      transition: all 0.25s;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.fa-trash:before {
+  margin-top: 5px;
+}
+
+.pictureAndDelete img:hover {
+  transform: scale(1.025);
+}
+
+//when resizing the window, so the pictures dont mush
+@media screen and (max-width: 800px) {
+  .pictureAndDelete {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pictureAndDelete {
+    flex: 100%;
+    max-width: 100%;
+  }
+}

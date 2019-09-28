@@ -4,11 +4,8 @@ const Modal = ({ handleClose, show, children }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
   return (
     <div className={showHideClassName} onClick={handleClose}>
-      <div className="modal-x" onClick={handleClose}>
-        <i className="far fa-times-circle"></i>
-      </div>
       <section
-        className={"modal-main"}
+        className={"modal-main3"}
         onClick={e => {
           e.stopPropagation();
         }}

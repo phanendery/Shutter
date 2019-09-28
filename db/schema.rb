@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_20_224030) do
+ActiveRecord::Schema.define(version: 2019_09_24_224211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 2019_09_20_224030) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_folders_on_user_id", unique: true
   end
 
   create_table "likes", force: :cascade do |t|
@@ -71,7 +70,6 @@ ActiveRecord::Schema.define(version: 2019_09_20_224030) do
     t.text "focal"
     t.text "description"
     t.integer "folder_id"
-    t.index ["user_id", "folder_id"], name: "index_pictures_on_user_id_and_folder_id", unique: true
     t.index ["user_id"], name: "index_pictures_on_user_id"
   end
 

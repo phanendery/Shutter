@@ -1,5 +1,5 @@
 import React from "react";
-import Modal from "../modal";
+import Modal from "../modal2";
 export default class Avatar extends React.Component {
   constructor(props) {
     super(props);
@@ -48,21 +48,25 @@ export default class Avatar extends React.Component {
   render() {
     return (
       <div className="avatar-container">
-        {/* */}
-        <Modal handleClose={this.hideModal} show={this.state.showModal}>
+        {/* <Modal show={this.state.showModal}>
           <div>
-            <form action="" onSubmit={this.handleSubmit}>
+            <div className="backgroundColor"></div>
+            <form action="" onSubmit={this.handleSubmit} className="avatarForm">
               <label htmlFor="avatar-load-input">
                 <input
+                  className="avatarChooseFile"
                   id="avatar-load-input"
                   type="file"
                   onChange={e => this.handleFile(e)}
                 />
               </label>
-              <button className="avatar-upload-button">Upload!</button>
+              <button className="close-button2" onClick={this.hideModal}>
+                Cancel
+              </button>
+              <button className="avatar-upload-button">Save</button>
             </form>
           </div>
-        </Modal>
+        </Modal> */}
       </div>
     );
   }

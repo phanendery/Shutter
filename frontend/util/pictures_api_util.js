@@ -24,3 +24,12 @@ export const deletePicture = id =>
     method: "delete",
     url: `/api/pictures/${id}`
   });
+
+export const updatePicture = picture => {
+  // console.log(picture);
+  return $.ajax({
+    method: "patch",
+    url: `/api/pictures/${picture.id}`,
+    data: picture
+  });
+};

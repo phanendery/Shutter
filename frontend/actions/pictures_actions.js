@@ -39,3 +39,8 @@ export const deletePicture = id => dispatch =>
   PictureAPIUtil.deletePicture(id).then(picture =>
     dispatch(removePicture(picture))
   );
+
+export const updatePicture = id => dispatch =>
+  PictureAPIUtil.updatePicture(id).then(picture =>
+    dispatch(receivePicture(picture))
+  );
