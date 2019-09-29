@@ -131,8 +131,25 @@ class PictureShow extends React.Component {
                 numLikes={this.props.picture.numLikes}
               />
             </div>
-
-            <p className="picture-info1">{description}</p>
+            <div className="titleAndFolder">
+              <p className="picture-info1">{description}</p>
+              <div className="addToFolders">
+                <div className="folderOptions">
+                  <select id="folderSelector">
+                    <option defaultValue="Select Folder">
+                      Select Folder
+                    </option>
+                    {Object.keys(this.state.folders).map(id => {
+                      let folder = this.state.folders[id];
+                      return <option key={id} value={id}>{folder.name}</option>;
+                    })}
+                  </select>
+                </div>
+                <div className="folderOptionsButton">
+                  <button className="folderOptionsButton1" onClick={this.addToFolder}>Add to folder!</button>
+                </div>
+              </div>
+            </div>
             <div className="specsAndComments">
               <div className="specsAndDelete">
                 <div className="specHolder">
@@ -182,16 +199,6 @@ class PictureShow extends React.Component {
                   <br />
                   <br />
                 </form>
-                {/* <select id="folderSelector">
-                  <option disabled selected>
-                    Select Folder
-                  </option>
-                  {Object.keys(this.state.folders).map(id => {
-                    let folder = this.state.folders[id];
-                    return <option value={id}>{folder.name}</option>;
-                  })}
-                </select>
-                <button onClick={this.addToFolder}>Add to folder!</button> */}
               </div>
             </div>
           </div>

@@ -40,7 +40,7 @@ a:focus {
   }
 }
 
-.avatarAndComment{
+.avatarAndComment {
   padding: 6px 0px;
 }
 
@@ -95,7 +95,7 @@ a:focus {
   font-size: 12px;
 }
 
-.commentsList{
+.commentsList {
   overflow: scroll;
   height: 350px;
 }
@@ -152,6 +152,7 @@ a:focus {
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
   color: black;
   font-size: 30px;
+  width: 500px;
 }
 
 .picture-info2 {
@@ -182,6 +183,11 @@ a:focus {
   height: 650px;
 }
 
+.titleAndFolder {
+  display: flex;
+  justify-content: space-between;
+}
+
 .pictureInfo {
   padding-top: 40px;
   background-color: white;
@@ -191,28 +197,24 @@ a:focus {
   width: 1000px;
 }
 
+.addToFolders {
+  margin-top: 35px;
+  display: flex;
+}
+
 .cameraIcon {
   font-size: 30px;
-  // margin-left: 100px;
-  // margin-top: 40px;
 }
 
 .infoIcon {
   font-size: 30px;
-  // margin-left: 100px;
-  // margin-top: 15px;
-  // margin-bottom: 100px;
 }
 
 .lensIcon {
   font-size: 30px;
-  // margin-left: 100px;
-  // margin-top: 15px;
 }
 
 .like-button {
-  // position: relative;
-  // margin-left: 650px;
   background-color: white;
   padding: 0;
   border: none;
@@ -313,4 +315,21 @@ a:focus {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.folderOptionsButton1 {
+  margin-left: 10px;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  padding: 2px 10px;
+  border-radius: 5px;
+  background-color: rgb(12, 196, 12);
+  border-color: rgb(12, 196, 12);
+  color: white;
+  text-align: right;
+}
+
+#folderSelector {
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
 }
