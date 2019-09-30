@@ -137,7 +137,7 @@ class PictureShow extends React.Component {
                 <div className="folderOptions">
                   <select id="folderSelector">
                     <option defaultValue="Select Folder">
-                      Select Folder
+                      Select Gallery
                     </option>
                     {Object.keys(this.state.folders).map(id => {
                       let folder = this.state.folders[id];
@@ -146,7 +146,7 @@ class PictureShow extends React.Component {
                   </select>
                 </div>
                 <div className="folderOptionsButton">
-                  <button className="folderOptionsButton1" onClick={this.addToFolder}>Add to folder!</button>
+                  <button className="folderOptionsButton1" onClick={this.addToFolder}>Add to Gallery!</button>
                 </div>
               </div>
             </div>

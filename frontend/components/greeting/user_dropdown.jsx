@@ -101,7 +101,7 @@ class Dropdown extends React.Component {
 
             <li>
               <Link to="/folders">
-                <button className="logout-dropdown">My Folders</button>
+                <button className="logout-dropdown">My Galleries</button>
               </Link>
             </li>
             <li>

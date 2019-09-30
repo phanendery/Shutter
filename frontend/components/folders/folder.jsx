@@ -9,24 +9,13 @@ class Folder extends React.Component {
     this.state = {
       folders: this.props.folders,
       showModal: false,
-      folderName: "",
-      showDelete: true
+      folderName: ""
     };
 
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
-    this.showDelete = this.showDelete.bind(this);
-    this.hideDelete = this.hideModal.bind(this);
-  }
-
-  showDelete() {
-    this.setState({ showDelete: true });
-  }
-
-  hideDelete() {
-    this.setState({ showDelete: false });
   }
 
   handleSubmit(e) {
@@ -72,18 +61,6 @@ class Folder extends React.Component {
   }
 
   render() {
-    // let deleteFolder;
-    // if (this.state.showDelete) {
-    //   let deleteFolder = (
-    //     <div className="folderDelete">
-    //       <i
-    //         onClick={() => this.removeFolder(folder.id)}
-    //         className="fas fa-trash"
-    //       ></i>
-    //     </div>
-    //     debugger
-    //   );
-    // }
     console.log(this.state);
     let folders = Object.values(this.state.folders).map(folder => {
       return (
@@ -102,27 +79,54 @@ class Folder extends React.Component {
     });
     return (
       <div className="folderIndex">
+        <h1 className="galleryHeader">Galleries</h1>
         <div className="addFolder">
-          <i onClick={this.showModal} className="fas fa-folder-plus"></i>
+          <div className="createFolder" onClick={this.showModal}>
+            <div className="createFolderWriting">
+              <div className="createIcon">
+                <i className="fas fa-plus-circle"></i>
+              </div>
+              <p className="createText">Create a new Gallery</p>
+            </div>
+          </div>
           <Modal show={this.state.showModal}>
             <div className="folderModal">
-              <div className="folderNameInput">
-                <form onSubmit={this.handleSubmit}>
-                  <input
-                    type="text"
-                    value={this.state.folderName}
-                    onChange={this.handleInput}
-                  ></input>
-                  <input
-                    type="submit"
-                    className="createFolderButton"
-                    value="Create Folder!"
-                  />
-                </form>
+              <div className="createGalleryModalHeaderHolder">
+                <h1 className="createGalleryModalHeader">CREATE GALLERY</h1>
+                <div
+                  className="createGalleryModalHeaderClose"
+                  onClick={this.hideModal}
+                >
+                  x
+                </div>
               </div>
-              <button className="folderModalClose" onClick={this.hideModal}>
-                Close
-              </button>
+              <div className="folderNameInput">
+                <p className="folderTitleHeader">Title</p>
+                <div className="folderCreateForm">
+                  <form onSubmit={this.handleSubmit}>
+                    <div className="titleInputHolder">
+                      <input
+                        className="titleInputTextBox"
+                        type="text"
+                        value={this.state.folderName}
+                        onChange={this.handleInput}
+                      ></input>
+                    </div>
+                    <div className="folderCreateButton">
+                      <input
+                        type="submit"
+                        className="createFolderButton"
+                        value="Create"
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div className="folderModalCloseHolder">
+                <button className="folderModalClose" onClick={this.hideModal}>
+                  Cancel
+                </button>
+              </div>
             </div>
           </Modal>
         </div>

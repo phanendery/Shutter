@@ -1,7 +1,59 @@
 .folderModal {
   display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 350px;
+  background-color: rgb(247, 248, 250);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+
+  .modal-main3 {
+    position: fixed;
+    background: white;
+    width: 350px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+}
+
+.createGalleryModalHeaderHolder {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  color: #71767a;
+  font-weight: bold;
+  padding: 15px;
+  font-size: 13px;
+  border-radius: 1px 1px 0 0;
+  height: 45px;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.1);
+  box-sizing: border-box;
+  margin: 0px;
+  text-align: left;
+  background-color: white;
+}
+
+.createGalleryModalHeader {
+  padding-top: 4px;
+}
+.createGalleryModalHeaderClose {
+  font-weight: normal;
+  font-size: 15px;
+  color: rgb(113, 118, 122);
+  cursor: pointer;
 }
 
 .folderModalClose {
@@ -14,6 +66,38 @@
   margin-left: 15px;
   display: flex;
   height: 100px;
+  flex-direction: column;
+}
+
+.folderTitleHeader {
+  color: #0099e5;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  padding-bottom: 10px;
+}
+
+.folderCreateForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleInputTextBox {
+  width: 300px;
+  height: 25px;
+  border-radius: 2.5px;
+  border: none;
+  border: 1px solid lightgrey;
+  margin: 5px 1px 3px 0px;
+}
+
+.titleInputTextBox:focus {
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.folderCreateButton {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
 }
 
 .createFolderButton {
@@ -21,26 +105,28 @@
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
   color: white;
   text-align: center;
-  padding: 0px 20px;
   margin-top: 10px;
-  border-radius: 25px;
-  background-color: #42a9e4;
-  font-size: 16px;
+  border-radius: 5px;
+  background-color: #34bf49;
+  font-weight: bold;
+  font-size: 14px;
   height: 30px;
-  width: 125px;
+  width: 90px;
+}
+
+.folderModalCloseHolder{
+  position: absolute;
+  top: 117px;
+  left: 140px;
 }
 
 .folderModalClose {
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
-  color: white;
+  color: #71767a;
   text-align: center;
-  border-radius: 25px;
-  background-color: blue;
-  font-size: 16px;
-  height: 30px;
-  width: 85px;
+  background-color: rgb(247, 248, 250);
+  font-size: 17px;
+  border: none;
   padding-left: 10px;
-  margin-top: 50px;
-  margin-right: 40px;
 }

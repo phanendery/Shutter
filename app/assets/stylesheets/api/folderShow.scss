@@ -1,27 +1,24 @@
 .folderAndDelete {
-  width: 150px;
+  width: 300px;
 }
 
 .folderList {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .folderHolder {
   display: flex;
   flex-direction: column;
-}
-
-.folderTitle {
-  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
-    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
-  font-size: 20px;
+  padding-right: 20px;
 }
 
 .folderDelete {
   //   margin-top: -7px;
   text-align: right;
-  width: 95px;
+  width: 270px;
+  margin-top: 25px;
 }
 
 .fa-folder:before {
@@ -38,5 +35,20 @@
   padding: 40px;
 }
 
-.addFolder {
+.folderShowToggleDeleteContainer {
+  text-align: right;
+  z-index: 1;
+}
+
+.folderShowToggleDelete {
+  margin-top: 25px;
+  margin-right: 25px;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }

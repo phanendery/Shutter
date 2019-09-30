@@ -1,12 +1,12 @@
 .folderShowPage {
   display: flex;
   flex-wrap: wrap;
-  padding: 10px 10px;
+  padding: 80px 10px;
 }
 .pictureAndDelete {
   flex: 25%;
   max-width: 25%;
-  padding: 15px;
+  padding-right: 15px;
   box-sizing: border-box;
   height: 200px;
   > a {
@@ -14,7 +14,6 @@
     height: 100%;
     width: 100%;
     > img {
-      // margin: 5px;
       transition: all 0.25s;
       height: 100%;
       width: 100%;
@@ -45,4 +44,22 @@
     flex: 100%;
     max-width: 100%;
   }
+}
+
+.folderNameTitle {
+  position: absolute;
+  margin-bottom: 25px;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  font-size: 30px;
+  color: #525558;
+  z-index: -1;
+}
+
+.folderShowTrashHolder {
+  margin-top: 10px;
+  text-align: right;
 }
