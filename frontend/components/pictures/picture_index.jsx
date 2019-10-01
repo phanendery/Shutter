@@ -11,17 +11,17 @@ class PictureIndex extends React.Component {
     let pictures = this.props.pictures.map(picture => {
       // debugger;
       return (
-        <div className="column">
+        // <div className="column">
           <Link to={`/pictures/${picture.id}`}>
             <PictureIndexItem key={`${picture.id}`} picture={picture} />
           </Link>
-        </div>
+        // </div>
       );
     });
     return (
       // <div className="picIndexWrapper">
-        <div className="row">{pictures}</div>
-      // {/* </div> */}
+      <div className="picIndexContainer">{pictures}</div>
+      // 
     );
   }
 }

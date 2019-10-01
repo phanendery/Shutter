@@ -1,69 +1,81 @@
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
+// .row {
+//   display: flex;
+//   flex-wrap: wrap;
+//   padding: 0 4px;
+// }
+
+// .column {
+//   flex: 25%;
+//   max-width: 25%;
+//   padding: 4px;
+//   box-sizing: border-box;
+//   height: 200px;
+//   > a {
+//     display: block;
+//     height: 100%;
+//     width: 100%;
+//     > img {
+//       // margin: 5px;
+//       transition: all 0.25s;
+//       height: 100%;
+//       width: 100%;
+//       object-fit: cover;
+//       box-sizing: border-box;
+//     }
+//   }
+// }
+
+// .column img:hover {
+//   transform: scale(1.025);
+// }
+
+// /* Responsive layout - makes a two column-layout instead of four columns */
+// @media screen and (max-width: 800px) {
+//   .column {
+//     flex: 50%;
+//     max-width: 50%;
+//   }
+// }
+
+// /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+// @media screen and (max-width: 600px) {
+//   .column {
+//     flex: 100%;
+//     max-width: 100%;
+//   }
+// }
+
+.picIndexWrapper {
+  width: 100%;
+  padding-bottom: 50px;
 }
 
-.column {
-  flex: 25%;
-  max-width: 25%;
-  padding: 4px;
+.picIndexContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style-type: none;
   box-sizing: border-box;
-  height: 200px;
-  > a {
-    display: block;
-    height: 100%;
-    width: 100%;
-    > img {
-      // margin: 5px;
-      transition: all 0.25s;
-      height: 100%;
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  min-height: 400px;
+  a {
+    height: 300px;
+    flex-grow: 1;
+    flex-basis: auto;
+    padding: 3px;
+
+    img {
       width: 100%;
+      height: 100%;
       object-fit: cover;
-      box-sizing: border-box;
     }
   }
 }
 
-.column img:hover {
-  transform: scale(1.025);
+.column {
+  flex-grow: 1;
+  flex-basis: auto;
 }
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-
-// .picIndexWrapper {
-//   width: 100%;
-//   padding-bottom: 50px;
-// }
-
-// .picIndexContainer {
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   list-style-type: none;
-//   box-sizing: border-box;
-//   width: 90%;
-//   margin-left: 5%;
-//   padding-top: 10px;
-//   margin-bottom: 10px;
-//   min-height: 400px;
-// }
-
-// .column {
-//   flex-grow: 1;
-//   flex-basis: auto;
-// }
