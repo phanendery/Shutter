@@ -18,15 +18,21 @@ export default class Comment extends React.Component {
     return (
       <div className="comment">
         <div className="avatarAndComment">
+          <div className="cPictureAndRest"> 
+
           <span>
             {" "}
             {this.props.user.avatar ? (
-              <img src={this.props.user.avatar} />
+              <img src={this.props.user.avatar} className="eachCommentAvatar" />
             ) : (
               <i className="fas fa-user-circle profile-icon" />
             )}
           </span>
-          <span className="commentext">{this.props.comment.comment}</span>
+          </div>
+          <div className="cUsernameAndText">
+            <span className="commentUsername">{this.props.user.username}</span>
+            <span className="commentext">{this.props.comment.comment}</span>
+          </div>
         </div>
         {this.props.user === this.props.currentUser ? (
           <button onClick={this.props.removeComment} className="deletecomment">

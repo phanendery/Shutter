@@ -30,30 +30,42 @@ a:focus {
 }
 
 .comment {
+  margin-top: 7px;
   display: flex;
   justify-content: space-between;
   img {
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
     object-fit: cover;
     border-radius: 50%;
   }
 }
 
 .avatarAndComment {
+  display: flex;
   padding: 6px 0px;
 }
 
 .comments {
+  padding-top: 40px;
   background: white;
   display: flex;
-  height: 350px;
+  height: 450px;
   flex-direction: row;
   li:hover {
     background: white;
   }
-  width: 300px;
+  width: 400px;
   justify-content: flex-end;
+}
+
+.commentAvatar {
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  margin-right: 15px;
+  margin-top: 8px;
 }
 
 .formComment {
@@ -71,6 +83,21 @@ a:focus {
   justify-content: space-between;
 }
 
+.commentUsername {
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 7px;
+}
+
+.cUsernameAndText {
+  display: flex;
+  flex-direction: column;
+}
+
 .addcomment {
   border: none;
   font-size: 30px;
@@ -78,10 +105,20 @@ a:focus {
   right: 0px;
 }
 
+::-webkit-input-placeholder {
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  color: grey;
+  padding-top: 15px;
+  padding-left: 30px;
+}
+
 .textAreaButton {
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
+  height: 55px;
+  // border-radius: 5px;
 }
 
 .comment-box {
@@ -100,8 +137,11 @@ a:focus {
   height: 350px;
 }
 
+.deleteButton {
+  margin-top: 50px;
+}
 .commentext {
-  padding-left: 25px;
+  padding-left: 10px;
   padding-right: 15px;
   font-size: 12px;
   color: rgb(34, 34, 34);
@@ -109,30 +149,23 @@ a:focus {
 }
 
 .delete-button {
-  font: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
-    "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
   padding: 7px 15px;
   border-radius: 5px;
   background-color: red;
   border-color: red;
   color: white;
-  // position: relative;
-  // left: 700px;
-  // top: 450px;
-  // flex: 50%;
   text-align: right;
-  // position: fixed;
 }
 
 .picture-name {
-  // display: flex;
-  // justify-content: left;
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  font-weight: bold;
   color: black;
-  font-size: 50px;
-  // margin-left: 100px;
-  // margin-top: 50px;
+  font-size: 30px;
+  margin-top: 20px;
 }
 
 .specs {
@@ -146,18 +179,35 @@ a:focus {
   width: 500px;
 }
 
+.pictureShowAvatar {
+  border-radius: 100px;
+  overflow: hidden;
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+}
+
+.posterUsername {
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  font-size: 17px;
+}
+
+.picturePoster {
+  padding-bottom: 20px;
+  width: 500px;
+}
+
 .picture-info1 {
-  padding: 30px 0px;
+  padding-bottom: 25px;
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
   color: black;
-  font-size: 30px;
+  font-size: 20px;
   width: 500px;
 }
 
 .picture-info2 {
-  // position: relative;
-  // left: 100px;
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
   color: black;
@@ -184,8 +234,14 @@ a:focus {
 }
 
 .titleAndFolder {
+  // display: flex;
+  // justify-content: space-between;
+}
+
+.titleAndAvatar {
   display: flex;
   justify-content: space-between;
+  width: 500px;
 }
 
 .pictureInfo {
@@ -193,13 +249,13 @@ a:focus {
   background-color: white;
   display: flex;
   flex-direction: column;
-  padding-bottom: 60px;
-  width: 1000px;
+  padding-bottom: 40px;
+  width: 600px;
 }
 
 .addToFolders {
-  margin-top: 35px;
   display: flex;
+  margin-left: 30px;
 }
 
 .cameraIcon {
@@ -222,10 +278,27 @@ a:focus {
   font-size: 30px;
 }
 
-.titleAndLike {
+.pictureInfoAndCommentsContainer {
+  display: flex;
+}
+
+.likeAndComments {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  padding-bottom: 15px;
+  width: 500px;
+}
+
+.numLikes {
+  margin-left: 25px;
+  margin-top: 5px;
+  font-size: 25px;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+}
+
+.likeIconAndNumLikes {
+  display: flex;
 }
 
 .fa-heart:before {

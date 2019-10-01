@@ -91,6 +91,7 @@ class PictureShow extends React.Component {
       deletePhoto = null;
     }
 
+    console.log(this.props.currentUser.username);
     return (
       <div className="showpageDiv">
         <div className="imgContainer">
@@ -122,85 +123,110 @@ class PictureShow extends React.Component {
           />
         </div>
         <div className="pictureInfoContainer">
-          <div className="pictureInfo">
-            <div className="titleAndLike">
-              <p className="picture-name">{pic_name}</p>
-              <LikeButtonContainer
-                liked={this.props.picture.liked}
-                picture_id={this.props.picture.id}
-                numLikes={this.props.picture.numLikes}
-              />
-            </div>
-            <div className="titleAndFolder">
-              <p className="picture-info1">{description}</p>
-              <div className="addToFolders">
-                <div className="folderOptions">
-                  <select id="folderSelector">
-                    <option defaultValue="Select Folder">
-                      Select Gallery
-                    </option>
-                    {Object.keys(this.state.folders).map(id => {
-                      let folder = this.state.folders[id];
-                      return <option key={id} value={id}>{folder.name}</option>;
-                    })}
-                  </select>
+          <div className="pictureInfoAndCommentsContainer">
+            <div className="pictureInfo">
+              <div className="likeAndComments">
+                <div className="likeIconAndNumLikes">
+                  <LikeButtonContainer
+                    liked={this.props.picture.liked}
+                    picture_id={this.props.picture.id}
+                    numLikes={this.props.picture.numLikes}
+                  />
+                  <p className="numLikes">{this.props.picture.numLikes}</p>
                 </div>
-                <div className="folderOptionsButton">
-                  <button className="folderOptionsButton1" onClick={this.addToFolder}>Add to Gallery!</button>
-                </div>
-              </div>
-            </div>
-            <div className="specsAndComments">
-              <div className="specsAndDelete">
-                <div className="specHolder">
-                  <div className="specs">
-                    <i className="fas fa-camera-retro cameraIcon" />
-                    <p className="picture-info2">{camera}</p>
+                <div className="addToFolders">
+                  <div className="folderOptions">
+                    <select id="folderSelector">
+                      <option defaultValue="Select Folder">
+                        Select Gallery
+                      </option>
+                      {Object.keys(this.state.folders).map(id => {
+                        let folder = this.state.folders[id];
+                        return (
+                          <option key={id} value={id}>
+                            {folder.name}
+                          </option>
+                        );
+                      })}
+                    </select>
                   </div>
-                  <div className="specs">
-                    <i className="fas fa-video lensIcon" />
-                    <p className="picture-info2">{lens}</p>
-                  </div>
-                  <div className="specs">
-                    <i className="fas fa-stream infoIcon" />
-                    <p className="picture-info2">{focal}</p>
-                  </div>
-                </div>
-                <div className="deleteButton">{deletePhoto}</div>
-              </div>
-              <div className="comments">
-                <form
-                  action=""
-                  onSubmit={this.handleSubmit}
-                  className="formComment"
-                >
-                  <div className="textAreaButton">
-                    <textarea
-                      className="comment-text-area"
-                      placeholder="Add a comment"
-                      value={this.state.text}
-                      onChange={this.handleInput}
-                    />
-                    <button className="addcomment">
-                      <i className="far fa-comments" />
+                  <div className="folderOptionsButton">
+                    <button
+                      className="folderOptionsButton1"
+                      onClick={this.addToFolder}
+                    >
+                      Add to Gallery!
                     </button>
                   </div>
-                  <ul className="commentsList">
-                    {this.props.picture.comments &&
-                      Object.values(this.props.picture.comments).map(
-                        comment => (
-                          <li key={comment.id}>
-                            <CommentContainer comment={comment} />
-                          </li>
-                        )
-                      )}
-                  </ul>
-
-                  <br />
-                  <br />
-                </form>
+                </div>
+              </div>
+              <div className="titleAndAvatar">
+                <p className="picture-name">{pic_name}</p>
+                <img
+                  className="pictureShowAvatar"
+                  src={this.props.currentUser.avatar}
+                ></img>
+              </div>
+              <div className="picturePoster">
+                <p className="posterUsername">
+                  by {this.props.currentUser.username}
+                </p>
+              </div>
+              <div className="specsAndComments">
+                <div className="specsAndDelete">
+                  <div className="specHolder">
+                    <div className="pictureDescription">
+                      <p className="picture-info1">{description}</p>
+                    </div>
+                    <div className="specs">
+                      <i className="fas fa-camera-retro cameraIcon" />
+                      <p className="picture-info2">{camera}</p>
+                    </div>
+                    <div className="specs">
+                      <i className="fas fa-video lensIcon" />
+                      <p className="picture-info2">{lens}</p>
+                    </div>
+                    <div className="specs">
+                      <i className="fas fa-stream infoIcon" />
+                      <p className="picture-info2">{focal}</p>
+                    </div>
+                  </div>
+                  <div className="deleteButton">{deletePhoto}</div>
+                </div>
               </div>
             </div>
+            <div className="comments">
+              <img className="commentAvatar"src={this.props.currentUser.avatar}></img>
+              <form
+                action=""
+                onSubmit={this.handleSubmit}
+                className="formComment"
+              >
+                <div className="textAreaButton">
+                  <textarea
+                    className="comment-text-area"
+                    placeholder="Add a comment"
+                    value={this.state.text}
+                    onChange={this.handleInput}
+                  />
+                  <button className="addcomment">
+                    <i className="far fa-comments" />
+                  </button>
+                </div>
+                <ul className="commentsList">
+                  {this.props.picture.comments &&
+                    Object.values(this.props.picture.comments).map(comment => (
+                      <li key={comment.id}>
+                        <CommentContainer comment={comment} />
+                      </li>
+                    ))}
+                </ul>
+
+                <br />
+                <br />
+              </form>
+            </div>
+            ;
           </div>
         </div>
       </div>
