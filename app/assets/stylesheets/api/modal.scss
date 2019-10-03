@@ -18,14 +18,16 @@
   background: rgba(0, 0, 0, 0.6);
 
   .modal-main {
-    position: fixed;
-    background: white;
+    position: absolute;
+    background: #f7f8fa;
+    transform: translate(-50%, -50%);
+    height: 85%;
     width: 80%;
-    height: auto;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 5px;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 2);
+    border-radius: 3px;
+    box-sizing: border-box;
   }
 }
 
@@ -36,4 +38,3 @@
 .display-none {
   display: none;
 }
-

@@ -51,15 +51,17 @@
 }
 
 .picIndexContainer {
+  background-color: #eee;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   list-style-type: none;
   box-sizing: border-box;
-  width: 90%;
-  margin-left: 5%;
+  // width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
   padding-top: 10px;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
   min-height: 400px;
   a {
     height: 300px;

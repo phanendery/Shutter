@@ -6,7 +6,7 @@ class Form extends React.Component {
     super(props);
     this.state = {
       title: "",
-      photoFile: null,
+      // photoFile: null,
       photoUrl: null,
       description: "",
       camera: "",
@@ -39,24 +39,22 @@ class Form extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-
     const { postPicture } = this.props;
     formData.append("picture[pic_name]", this.state.title);
     formData.append("picture[description]", this.state.description);
     formData.append("picture[camera]", this.state.camera);
     formData.append("picture[lens]", this.state.lens);
     formData.append("picture[focal]", this.state.focal);
-    if (this.state.photoFile) {
-      formData.append("picture[photo]", this.state.photoFile);
+    if (this.props.photoFile) {
+      formData.append("picture[photo]", this.props.photoFile);
     }
     formData.append("picture[user_id]", this.props.currentUser);
-    // console.log("formdata:", formData);
     postPicture(formData).then(() => this.props.history.push("/pictures"));
   }
 
   render() {
-    const preview = this.state.photoUrl ? (
-      <img src={this.state.photoUrl} className="previewPhoto" />
+    const preview = this.props.photoUrl ? (
+      <img src={this.props.photoUrl} className="previewPhoto" />
     ) : (
       <div className="previewPlaceholder">
         {/* <i className="fas fa-photo-video"></i> */}
@@ -83,8 +81,8 @@ class Form extends React.Component {
                 <label htmlFor="post-body" className="title-font">
                   Description
                 </label>
-                <input
-                  type="text"
+                <textarea
+                  row="10"
                   className="post-bodyDescription"
                   value={this.state.description}
                   onChange={this.handleInput("description")}
@@ -126,19 +124,20 @@ class Form extends React.Component {
                   onChange={this.handleInput("focal")}
                 />
               </div>
-              <label className="fileUpload" htmlFor="file-upload-input">
+              {/* <label className="fileUpload" htmlFor="file-upload-input">
                 <input
                   id="file-upload-input"
                   type="file"
                   onChange={e => this.handleFile(e)}
                 />
                 <span>Choose a Photo!</span>
-              </label>
-              {/* <button className="upload-button-file">Choose a Photo!</button> */}
+              </label> */}
+              <div className="uploadHolder">
+                <button type="submit" className="upload-modal-button">
+                  Submit
+                </button>
+              </div>
             </div>
-          </div>
-          <div className="uploadAndChoose">
-            <button className="upload-modal-button">Submit</button>
           </div>
         </form>
       </div>

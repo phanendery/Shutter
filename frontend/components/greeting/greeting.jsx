@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./user_dropdown_container";
+import PictureUpload from "../pictures/picture_upload/picture_upload_container";
 
 const Greeting = ({ currentUser, logout }) => {
   // console.log(currentUser);
@@ -19,14 +20,9 @@ const Greeting = ({ currentUser, logout }) => {
   );
   const personalGreeting = () => (
     <hgroup className="header-group">
-      {/* <Link className="discover-navbar" to="/pictures">
-        Discover
-      </Link> */}
       <div className="spacer" />
       <Dropdown />
-      <Link to="/pictures/new">
-        <i className="fas fa-plus upload-button-plus" />
-      </Link>
+      <PictureUpload></PictureUpload>
     </hgroup>
   );
 

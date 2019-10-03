@@ -91,7 +91,6 @@ class PictureShow extends React.Component {
       deletePhoto = null;
     }
 
-    console.log(this.props.currentUser.username);
     return (
       <div className="showpageDiv">
         <div className="imgContainer">
@@ -196,7 +195,10 @@ class PictureShow extends React.Component {
               </div>
             </div>
             <div className="comments">
-              <img className="commentAvatar"src={this.props.currentUser.avatar}></img>
+              <img
+                className="commentAvatar"
+                src={this.props.currentUser.avatar}
+              ></img>
               <form
                 action=""
                 onSubmit={this.handleSubmit}

@@ -29,52 +29,67 @@
   align-self: flex-end;
 }
 
-.upload-page {
-  display: flex;
-  flex-grow: 1;
-}
-
-.upload-image {
-  font-size: 200px;
-  padding-top: 200px;
-}
-
-.upload-button {
-  border: none;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.upload-button:hover {
-  color: #1890ff;
+.modalPicUploadHolder {
+  height: 100%;
+  width: 100%;
 }
 
 .upload-form {
   font: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
     "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
-  // width: 60%;
+  height: 100%;
 }
 
 .uploadModalBox {
-  // width: 60%;
+  height: 100%;
+  width: 100%;
 }
 
+.dragCaption {
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  color: #0099e5;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.selectAndDragCaption {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+  position: relative;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  margin-top: 90px;
+}
+
+// #00aaff
+
 .upload-modal-button {
-  font: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans,
-    "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
-  padding: 5px 20px;
-  border-radius: 50px;
-  background-color: #19d6c0;
-  // border-color: #34bf49;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  padding: 8px;
+  // font-weight: 300;
+  transition: background-color 0.25s;
+  cursor: pointer;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border-width: 1px;
+  background-color: #34bf49;
+  border-color: #34bf49;
   color: white;
-  // height: 25px;
+  width: 100%;
   text-align: center;
 }
 
 #image-form {
   display: flex;
-  // height: 60vh;
+  height: 100%;
   flex-direction: column;
 }
 
@@ -89,40 +104,93 @@
   text-align: center;
 }
 
+input[type="text"] {
+  font-size: 14px;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+}
+
+textarea::placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  color: pink;
+}
+
+.picIndexContainer {
+  min-height: 100vh;
+}
+
+.post-bodyDescription::placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+}
+textarea {
+  font-size: 14px;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  word-wrap: break-word;
+  overflow: wrap;
+  resize: none;
+}
+
 .post-body {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   width: 100%;
-  // margin-top: 6%;
   border: none;
-  background-color: #eee;
+  padding: 7px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(185, 193, 199, 0.5);
+  transition: border-color 0.25s;
+  outline: none;
   box-shadow: none;
 }
 
 .post-bodyDescription {
   height: 100px;
-  background-color: #eee;
-  box-shadow: none;
-  border: none;
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  border: none;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(185, 193, 199, 0.5);
+  transition: border-color 0.25s;
+  outline: none;
+  box-shadow: none;
 }
 
 #phanny-image {
-  width: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  overflow: hidden;
+  background-color: #f7f8fa;
+  border-right: 1px solid lightgrey;
 }
 
 #phanny-image img {
-  // margin-left: 1%;
-  // margin-top: 1%;
-  // background: grey;
-  width: auto;
+  max-width: 100%;
 }
 
 .phannyImageandPack {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   padding: 30px;
+  height: 100%;
 }
 
 .previewPlaceholder {
@@ -132,7 +200,7 @@
 }
 
 .previewPhoto {
-  height: 300px;
+  max-height: 300px;
   width: auto;
 }
 
@@ -148,19 +216,18 @@
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
   font-size: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   // width: 150px;
-  color: black;
+  color: rgb(0, 153, 229);
   display: block;
+  font-weight: 300;
 }
 
 #file-upload-input {
-  // visibility: hidden;
   padding-top: 15px;
   margin-top: 5px;
   margin-left: 5px;
   position: absolute;
-  // z-index: 1;
 }
 
 .inputStyling {
@@ -182,7 +249,6 @@
   color: white;
   text-align: center;
   padding: 10px;
-  // z-index: -1;
 }
 
 .upload-button-plus {
@@ -192,10 +258,8 @@
   font-size: 35px;
 }
 
-.uploadAndChoose {
+.uploadHolder {
   display: flex;
-  justify-content: flex-end;
-  padding: 0px 35px 35px 20px;
 }
 
 label.fileUpload input[type="file"] {
@@ -207,17 +271,23 @@ label.fileUpload input[type="file"] {
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
   margin-top: 5%;
-  padding: 7px 15px;
+  padding: 12px 0px;
   border-radius: 5px;
-  background-color: #19d6c0;
-  border-color: #19d6c0;
+  background-color: #0099e5;
+  border-color: #0099e5;
+  transition: background-color 0.25s;
   color: white;
   text-align: center;
+  font-weight: 500;
   padding: 10px;
+  width: 180px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 25px;
 }
 
 .fileUpload:hover {
-  background: #70d6ca;
+  background: #00aaff;
   cursor: pointer;
 }
 .fileUpload:active {
@@ -228,4 +298,8 @@ label.fileUpload input[type="file"] {
 }
 .fileUpload :valid + span {
   color: white;
+}
+
+.upload-button {
+  border: none;
 }

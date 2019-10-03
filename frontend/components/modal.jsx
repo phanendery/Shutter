@@ -4,9 +4,9 @@ const Modal = ({ handleClose, show, children }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
   return (
     <div className={showHideClassName} onClick={handleClose}>
-      <div className="modal-x" onClick={handleClose}>
+      {/* <div className="modal-x" onClick={handleClose}>
         <i className="far fa-times-circle"></i>
-      </div>
+      </div> */}
       <section
         className={"modal-main"}
         onClick={e => {

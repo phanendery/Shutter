@@ -155,11 +155,11 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
-textarea {
+/* textarea {
   overflow: auto;
   vertical-align: top;
   resize: vertical;
-}
+} */
 
 /**
  * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
@@ -285,12 +285,10 @@ legend {
 
 button,
 input,
-select,
-textarea {
-  font-size: 100%; /* 1 */
+select{
+  /* font-size: 100%; 1 */
   margin: 0; /* 2 */
   vertical-align: baseline; /* 3 */
-  *vertical-align: middle; /* 3 */
 }
 
 /**
@@ -396,10 +394,10 @@ input::-moz-focus-inner {
  * 2. Improve readability and alignment in all browsers.
  */
 
-textarea {
-  overflow: auto; /* 1 */
-  vertical-align: top; /* 2 */
-}
+/* textarea {
+  overflow: auto; 
+  vertical-align: top; 
+} */
 
 /**
  * Remove most spacing between table cells.
@@ -413,8 +411,7 @@ table {
 html,
 button,
 input,
-select,
-textarea {
+select{
   color: #222;
 }
 
@@ -437,10 +434,8 @@ fieldset {
   margin: 0;
   padding: 0;
 }
+/* 
 
-textarea {
-  resize: vertical;
-}
 
 .chromeframe {
   margin: 0.2em 0;

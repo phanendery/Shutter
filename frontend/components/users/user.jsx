@@ -9,7 +9,6 @@ class User extends React.Component {
 
   render() {
     if (this.props.pictures.length === 0) return <></>;
-
     let matchPics = [];
     for (let i = 0; i < this.props.pictures.length; i++) {
       if (this.props.match.params.userId == this.props.pictures[i].user_id) {
