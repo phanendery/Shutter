@@ -1,0 +1,71 @@
+.modal-main4 {
+  width: 408px;
+  height: 604px;
+  background: white;
+  margin-left: 160px;
+  margin-top: 65px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.galleryTitle {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgrey;
+  padding: 20px;
+}
+
+.galleryTitleHolder {
+  font-size: 18px;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  font-weight: bold;
+}
+
+.galleryModalClose {
+  cursor: pointer;
+  color: black;
+  font-size: 18px;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+}
+
+.galleryName {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.galleryName:hover {
+  background-color: rgb(8, 112, 209);
+  color: white;
+  transition: 0.25s;
+}
+
+.galleryListAvatar {
+  height: 75px;
+  width: 75px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.avatarAndGalleryName {
+  display: flex;
+  justify-content: space-between;
+}
+
+.galleryNameText {
+  margin-top: 30px;
+  margin-left: 15px;
+  font-size: 18px;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+}
+
+.checkHolder {
+  margin-top: 30px;
+}
+
+.galleryNameAndAvatar {
+  display: flex;
+}

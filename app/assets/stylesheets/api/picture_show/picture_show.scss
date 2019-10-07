@@ -148,7 +148,14 @@ a:focus {
   font-family: "Montserrat", sans-serif;
 }
 
+.fa-folder-plus:before {
+  color: black;
+  font-size: 30px;
+  margin-left: 20px;
+}
+
 .delete-button {
+  font-size: 15px;
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros,
     FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
   padding: 7px 15px;

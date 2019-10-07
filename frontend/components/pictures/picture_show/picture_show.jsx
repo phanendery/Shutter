@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import LikeButtonContainer from "../../likes/like_button_container";
 import CommentContainer from "../../comments/comment_container";
+import Modal from "../../../components/galleryModal";
 
 class PictureShow extends React.Component {
   constructor(props) {
@@ -13,11 +14,15 @@ class PictureShow extends React.Component {
       text: "",
       imageLoaded: false,
       spinnerDone: false,
-      folders: {}
+      folders: {},
+      showModal: false,
+      galleryCheck: false
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addToFolder = this.addToFolder.bind(this);
+    this.showModal = this.showModal.bind(this);
+    this.hideModal = this.hideModal.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +37,16 @@ class PictureShow extends React.Component {
     });
   }
 
+  showModal() {
+    this.setState({ showModal: true });
+  }
+
+  hideModal() {
+    this.setState({ showModal: false });
+    const currentCheck = this.state.galleryCheck;
+    this.setState({ galleryCheck: !currentCheck });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.createComment(this.state.text);
@@ -43,26 +58,36 @@ class PictureShow extends React.Component {
     this.setState({ text: e.target.value });
   }
 
-  addToFolder() {
-    let e = document.getElementById("folderSelector");
+  // addToFolder() {
+  //   let e = document.getElementById("folderSelector");
 
-    let folderOptions = Object.keys(e.options);
-    for (let i = 0; i < folderOptions.length; i++) {
-      let key = folderOptions[i];
-      if (e.options[key].selected === true) {
-        let folder_id = e.options[key].value;
-        this.props.updatePicture({
-          id: this.props.pictureId,
-          picture: { folder_id }
-        });
-      }
-    }
+  //   let folderOptions = Object.keys(e.options);
+  //   for (let i = 0; i < folderOptions.length; i++) {
+  //     let key = folderOptions[i];
+  //     if (e.options[key].selected === true) {
+  //       let folder_id = e.options[key].value;
+  //       this.props.updatePicture({
+  //         id: this.props.pictureId,
+  //         picture: { folder_id }
+  //       });
+  //     }
+  //   }
+  // }
+
+  addToFolder(folder) {
+    console.log(folder);
+    let folder_id = folder.id;
+    this.props.updatePicture({
+      id: this.props.pictureId,
+      picture: { folder_id }
+    });
+    const currentCheck = this.state.galleryCheck;
+    this.setState({ galleryCheck: !currentCheck });
   }
 
   render() {
     let photo = this.props.picture;
     if (!photo) {
-      // console.log("loading");
       return null;
     }
     let pic_name = photo.pic_name;
@@ -133,6 +158,53 @@ class PictureShow extends React.Component {
                   />
                   <p className="numLikes">{this.props.picture.numLikes}</p>
                 </div>
+                <div className="galleryButtonHolder" onClick={this.showModal}>
+                  <i className="fas fa-folder-plus"></i>
+                </div>
+                <Modal show={this.state.showModal}>
+                  <div className="galleryTitle">
+                    <p className="galleryTitleHolder">
+                      Galleries • {Object.keys(this.state.folders).length}
+                    </p>
+                    <div className="galleryModalClose" onClick={this.hideModal}>
+                      x
+                    </div>
+                  </div>
+                  <div>
+                    {Object.keys(this.state.folders).map(id => {
+                      let folder = this.state.folders[id];
+                      return (
+                        <ul
+                          key={id}
+                          value={id}
+                          className="galleryName"
+                          onClick={() => this.addToFolder(folder)}
+                        >
+                          <div className="avatarAndGalleryName">
+                            <div className="galleryNameAndAvatar">
+                              <img
+                                className="galleryListAvatar"
+                                src={folder.folderFirstPicture}
+                              ></img>
+                              <p className="galleryNameText">{folder.name}</p>
+                            </div>
+
+                            <div className="checkHolder">
+                              <i
+                                className={
+                                  this.state.galleryCheck
+                                    ? "fas fa-check"
+                                    : " fas fa-plus"
+                                }
+                              ></i>
+                            </div>
+                          </div>
+                        </ul>
+                      );
+                    })}
+                  </div>
+                </Modal>
+                {/* 
                 <div className="addToFolders">
                   <div className="folderOptions">
                     <select id="folderSelector">
@@ -158,6 +230,7 @@ class PictureShow extends React.Component {
                     </button>
                   </div>
                 </div>
+              */}
               </div>
               <div className="titleAndAvatar">
                 <p className="picture-name">{pic_name}</p>
@@ -228,7 +301,6 @@ class PictureShow extends React.Component {
                 <br />
               </form>
             </div>
-            ;
           </div>
         </div>
       </div>
