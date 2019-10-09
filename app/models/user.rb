@@ -19,7 +19,10 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_many :pictures
+  has_many :pictures,
+  depdendent: :destroy
+
+
   has_many :likes
   has_many :comments
   has_many :folders
