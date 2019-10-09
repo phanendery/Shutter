@@ -61,7 +61,6 @@ class Folder extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     let folders = Object.values(this.state.folders).map(folder => {
       return (
         <div key={folder.id} className="folderAndDelete">

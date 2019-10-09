@@ -10,7 +10,6 @@ import PictureShow from "../picture_show/picture_show";
 import { fetchFolders } from "../../../actions/folder_actions";
 
 const mSTP = (state, ownProps) => {
-  console.log(ownProps);
   let pictureId = ownProps.match.params.pictureId;
   let picture = state.entities.pictures[pictureId];
   let currentUser = state.entities.users[state.session.id];

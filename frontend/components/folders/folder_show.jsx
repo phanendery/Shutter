@@ -46,7 +46,6 @@ export default class FolderShow extends Component {
     }
     Object.keys(this.state.pictures).map(key => {
       let picture = this.state.pictures[key];
-      console.log(picture);
     });
 
     return (
