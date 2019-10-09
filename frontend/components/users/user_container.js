@@ -6,9 +6,11 @@ const mapStateToProps = (state, ownProps) => {
   let currentUser = state.session.id;
   let pictures = Object.values(state.entities.pictures);
   pictures = pictures.filter(picture => {
-    return ownProps.match.params.userId === currentUser;
+    return picture.user_id === currentUser;
   });
-  
+
+  // debugger;
+
   return {
     pictures: pictures,
     currentUser

@@ -25,7 +25,7 @@ class Home extends React.Component {
               around the world. We're not guided by fads—just great photography.
             </div>
             <div className="big-signup">
-              <Link to="/signup" className="sign-up-button2">
+              <Link to="/login" className="sign-up-button2">
                 Experience Now
               </Link>
             </div>

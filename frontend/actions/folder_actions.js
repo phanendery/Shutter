@@ -36,7 +36,6 @@ export const postFolder = folder => dispatch => {
 export const deleteFolder = id => dispatch =>
   FolderAPIUtil.deleteFolder(id).then(folder => dispatch(removeFolder(folder)));
 
-  
 export const updateFolder = id => dispatch =>
   FolderAPIUtil.updateFolder(id).then(folder =>
     dispatch(receiveFolder(folder))

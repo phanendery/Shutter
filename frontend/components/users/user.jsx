@@ -15,7 +15,7 @@ class User extends React.Component {
         matchPics.push(this.props.pictures[i]);
       }
     }
-
+    debugger;
     return (
       <div className="userContent">
         <div className="pictureHeader">

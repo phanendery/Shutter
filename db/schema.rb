@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_24_224211) do
+ActiveRecord::Schema.define(version: 2019_10_08_003521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,13 @@ ActiveRecord::Schema.define(version: 2019_09_24_224211) do
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "picture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "picture_to_folders", force: :cascade do |t|
+    t.integer "picture_id", null: false
+    t.integer "folder_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
