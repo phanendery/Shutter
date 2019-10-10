@@ -5,6 +5,7 @@ import {
   deleteFolder,
   postFolder
 } from "../../actions/folder_actions";
+import { fetchJoins } from "../../actions/picturetofolder_action";
 import Folder from "../folders/folder";
 
 const mSTP = (state, ownProps) => {
@@ -23,6 +24,7 @@ const mDTP = dispatch => {
     fetchFolder: id => dispatch(fetchFolder(id)),
     deleteFolder: id => dispatch(deleteFolder(id)),
     fetchFolders: () => dispatch(fetchFolders()),
+    fetchJoins: () => dispatch(fetchJoins()),
     postFolder: folder => dispatch(postFolder(folder))
   };
 };

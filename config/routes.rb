@@ -13,6 +13,6 @@ Rails.application.routes.draw do
     end
     resources :comments, only: [:destroy]
     resources :folders, except: [:edit,:new]
-    resources :picture_to_folders, only: [:create,:destroy,:show]
+    resources :picture_to_folders, only: [:index,:create,:destroy,:show]
   end
 end

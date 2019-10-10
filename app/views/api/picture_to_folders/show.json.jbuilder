@@ -1,0 +1,1 @@
+json.extract! @pictureToFolder, :id, :folder_id, :picture_id

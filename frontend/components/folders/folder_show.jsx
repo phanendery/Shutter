@@ -20,6 +20,7 @@ export default class FolderShow extends Component {
   }
 
   componentDidMount() {
+    this.props.fetchJoins();
     this.props.fetchFolder(this.props.folderId).then(result => {
       this.setState({ pictures: result.folder.pictures });
       this.setState({ folderName: result.folder.name });
@@ -27,26 +28,47 @@ export default class FolderShow extends Component {
   }
 
   removePictureFromFolder(key) {
-    this.props
-      .updatePicture({
-        id: key,
-        picture: { folder_id: null }
-      })
-      .then(() => {
-        this.props.fetchFolder(this.props.folderId).then(result => {
-          this.setState({ pictures: result.folder.pictures });
-          this.setState({ folderName: result.folder.name });
+    let joins = this.props.joins;
+    for (let i = 0; i < joins.length; i++) {
+      let join = joins[i];
+      // console.log(join, this.props.folderId, key);
+      if (
+        join.folder_id === parseInt(this.props.folderId) &&
+        join.picture_id === parseInt(key)
+      ) {
+        this.props.deleteJoin(join.id).then(() => {
+          this.props.fetchFolder(this.props.folderId).then(result => {
+            console.log(result);
+            console.log("here");
+            this.setState({
+              pictures: result.folder.pictures,
+              folderName: result.folder.name
+            });
+          });
         });
-      });
+      }
+    }
+
+    // this.props
+    //   .updatePicture({
+    //     id: key,
+    //     picture: { folder_id: null }
+    //   })
+    // .then(() => {
+    //   this.props.fetchFolder(this.props.folderId).then(result => {
+    //     this.setState({ pictures: result.folder.pictures });
+    //     this.setState({ folderName: result.folder.name });
+    //   });
+    // });
   }
 
   render() {
     if (!this.state.pictures) {
       return null;
     }
-    Object.keys(this.state.pictures).map(key => {
-      let picture = this.state.pictures[key];
-    });
+    // Object.keys(this.state.pictures).map(key => {
+    //   let picture = this.state.pictures[key];
+    // });
 
     return (
       <div className="folderShowPageContainer">

@@ -55,6 +55,7 @@ class Folder extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchJoins();
     this.props.fetchFolders().then(result => {
       this.setState({ folders: result.folders });
     });

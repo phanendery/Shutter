@@ -12,5 +12,13 @@
 class Folder < ApplicationRecord
     validates :name, presence: true
     belongs_to :user
-    has_many :pictures
+
+    has_many :joins,
+    primary_key: :id,
+    foreign_key: :folder_id,
+    class_name: :PictureToFolder
+
+    has_many :pictures,
+    through: :joins
+
 end

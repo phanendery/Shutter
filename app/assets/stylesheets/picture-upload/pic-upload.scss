@@ -120,6 +120,7 @@ textarea::placeholder {
 
 .picIndexContainer {
   min-height: 100vh;
+  align-content: flex-start;
 }
 
 .post-bodyDescription::placeholder {

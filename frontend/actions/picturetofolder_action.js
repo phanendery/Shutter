@@ -1,7 +1,15 @@
 import * as JoinAPIUtil from "../util/picturetofolders_api_util";
 
+export const RECEIVE_ALL_JOINS = "RECEIVE_ALL_JOINS";
 export const RECEIVE_JOIN = "RECEIEVE_JOIN";
 export const REMOVE_JOIN = "REMOVE_JOIN";
+
+export const receiveJoins = joins => {
+  return {
+    joins,
+    type: RECEIVE_ALL_JOINS
+  };
+};
 
 export const receiveJoin = data => {
   return {
@@ -10,12 +18,15 @@ export const receiveJoin = data => {
   };
 };
 
-export const removeJoin = data => {
+export const removeJoin = id => {
   return {
-    joinId: data.id,
+    joinId: id,
     type: REMOVE_JOIN
   };
 };
+
+export const fetchJoins = () => dispatch =>
+  JoinAPIUtil.fetchJoins().then(joins => dispatch(receiveJoins(joins)));
 
 export const fetchJoin = id => dispatch =>
   JoinAPIUtil.fetchJoin(id).then(data => dispatch(receiveJoin(data)));
@@ -25,4 +36,4 @@ export const postJoin = data => dispatch => {
 };
 
 export const deleteJoin = id => dispatch =>
-  JoinAPIUtil.deleteJoin(id).then(data => dispatch(removeJoin(data)));
+  JoinAPIUtil.deleteJoin(id).then(id => dispatch(removeJoin(id)));

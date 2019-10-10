@@ -11,6 +11,13 @@ export const postJoin = data =>
     data
   });
 
+export const fetchJoins = () => {
+  return $.ajax({
+    method: "GET",
+    url: "api/picture_to_folders"
+  });
+};
+
 export const deleteJoin = id =>
   $.ajax({
     method: "delete",

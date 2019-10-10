@@ -17,12 +17,23 @@
 class Picture < ApplicationRecord
     validates :pic_name, :user_id, presence: true
     belongs_to :user
-    belongs_to :folder, optional: :true   
+    # belongs_to :folder, optional: :true   
     has_one_attached :photo
     has_many :likes
     has_many :comments
+
+     has_many :joins,
+    primary_key: :id,
+    foreign_key: :picture_id,
+    class_name: :PictureToFolder
+
+    has_many :folders, 
+    # optional: :true,
+    through: :joins
     
     has_many :likers,
     through: :likes,
     source: :user
+
+   
 end

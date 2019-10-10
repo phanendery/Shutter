@@ -57,33 +57,22 @@ class PictureShow extends React.Component {
     this.setState({ text: e.target.value });
   }
 
-  // addToFolder() {
-  //   let e = document.getElementById("folderSelector");
-
-  //   let folderOptions = Object.keys(e.options);
-  //   for (let i = 0; i < folderOptions.length; i++) {
-  //     let key = folderOptions[i];
-  //     if (e.options[key].selected === true) {
-  //       let folder_id = e.options[key].value;
-  //       this.props.updatePicture({
-  //         id: this.props.pictureId,
-  //         picture: { folder_id }
-  //       });
-  //     }
-  //   }
-  // }
-
   addToFolder(folder) {
     let folder_id = folder.id;
-    this.props.updatePicture({
-      id: this.props.pictureId,
-      picture: { folder_id }
+    // this.props.updatePicture({
+    //   id: this.props.pictureId,
+    //   picture: { folder_id }
+    // });
+    this.props.postJoin({
+      picture_to_folder: {
+        picture_id: this.props.pictureId,
+        folder_id: folder_id
+      }
     });
     const currentCheck = this.state.galleryCheck;
     this.setState({ galleryCheck: !currentCheck });
   }
   render() {
-    console.log(this.props.picture);
     let photo = this.props.picture;
     if (!photo) {
       return null;
@@ -209,34 +198,6 @@ class PictureShow extends React.Component {
                 ) : (
                   <div> </div>
                 )}
-
-                {/* 
-                <div className="addToFolders">
-                  <div className="folderOptions">
-                    <select id="folderSelector">
-                      <option defaultValue="Select Folder">
-                        Select Gallery
-                      </option>
-                      {Object.keys(this.state.folders).map(id => {
-                        let folder = this.state.folders[id];
-                        return (
-                          <option key={id} value={id}>
-                            {folder.name}
-                          </option>
-                        );
-                      })}
-                    </select>
-                  </div>
-                  <div className="folderOptionsButton">
-                    <button
-                      className="folderOptionsButton1"
-                      onClick={this.addToFolder}
-                    >
-                      Add to Gallery!
-                    </button>
-                  </div>
-                </div>
-              */}
               </div>
               <div className="titleAndAvatar">
                 <p className="picture-name">{pic_name}</p>
@@ -313,3 +274,49 @@ class PictureShow extends React.Component {
 }
 
 export default PictureShow;
+
+{
+  /* 
+                <div className="addToFolders">
+                  <div className="folderOptions">
+                    <select id="folderSelector">
+                      <option defaultValue="Select Folder">
+                        Select Gallery
+                      </option>
+                      {Object.keys(this.state.folders).map(id => {
+                        let folder = this.state.folders[id];
+                        return (
+                          <option key={id} value={id}>
+                            {folder.name}
+                          </option>
+                        );
+                      })}
+                    </select>
+                  </div>
+                  <div className="folderOptionsButton">
+                    <button
+                      className="folderOptionsButton1"
+                      onClick={this.addToFolder}
+                    >
+                      Add to Gallery!
+                    </button>
+                  </div>
+                </div>
+              */
+}
+
+// addToFolder() {
+//   let e = document.getElementById("folderSelector");
+
+//   let folderOptions = Object.keys(e.options);
+//   for (let i = 0; i < folderOptions.length; i++) {
+//     let key = folderOptions[i];
+//     if (e.options[key].selected === true) {
+//       let folder_id = e.options[key].value;
+//       this.props.updatePicture({
+//         id: this.props.pictureId,
+//         picture: { folder_id }
+//       });
+//     }
+//   }
+// }

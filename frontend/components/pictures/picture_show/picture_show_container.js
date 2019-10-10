@@ -5,6 +5,7 @@ import {
   deletePicture,
   updatePicture
 } from "../../../actions/pictures_actions";
+import { postJoin } from "../../../actions/picturetofolder_action";
 import { createComment } from "../../../actions/comment_actions";
 import PictureShow from "../picture_show/picture_show";
 import { fetchFolders } from "../../../actions/folder_actions";
@@ -27,6 +28,7 @@ const mDTP = (dispatch, ownProps) => {
     deletePicture: id => dispatch(deletePicture(id)),
     updatePicture: id => dispatch(updatePicture(id)),
     fetchFolders: () => dispatch(fetchFolders()),
+    postJoin: data => dispatch(postJoin(data)),
     createComment: text =>
       dispatch(createComment(ownProps.match.params.pictureId, text))
   };

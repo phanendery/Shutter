@@ -1,4 +1,4 @@
-json.extract! @picture, :id, :pic_name, :user_id, :description, :camera, :lens, :focal, :folder_id
+json.extract! @picture, :id, :pic_name, :user_id, :description, :camera, :lens, :focal
 json.user @picture.user.username
 json.numLikes @picture.likes.count
 json.liked @picture.likers.include? current_user
@@ -12,4 +12,6 @@ json.set! :comments do
     end
 end
 
-
+json.set! :folders do
+    json.array! @picture.folders, :id
+end
