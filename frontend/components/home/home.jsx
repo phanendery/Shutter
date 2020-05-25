@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import discover from "../../../app/assets/images/Discover.jpg";
 
 class Home extends React.Component {
   render() {
@@ -10,8 +9,7 @@ class Home extends React.Component {
           <div className="img-container">
             <img
               className="home-page-picture"
-              // src="https://web.500px.com/static/media/discover.be9b60f7.jpg"
-              src="../../../app/assets/images/Discover.jpg"
+              src="https://i.imgur.com/Mjd2m2c.jpg"
               alt="home-page-picture"
             />
             <span className="pic-text">"J"tier in Studio by Milton Smith</span>
